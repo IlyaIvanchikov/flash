@@ -1,4 +1,16 @@
 {
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IlyaIvanchikov/flash.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IlyaIvanchikov/flash/issues"
+  },
+  "homepage": "https://github.com/IlyaIvanchikov/flash#readme",
   "name": "flash",
   "version": "0.1.0",
   "private": true,
