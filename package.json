@@ -10,7 +10,6 @@
   "bugs": {
     "url": "https://github.com/IlyaIvanchikov/flash/issues"
   },
-  "homepage": "https://github.com/IlyaIvanchikov/flash#readme",
   "name": "flash",
   "version": "0.1.0",
   "private": true,
