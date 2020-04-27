@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: 'red',
-    height: '100%'
+    height: '100vh'
   },
 }))
 
