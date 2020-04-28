@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import BlockPatameters from './BlockParameters/BlockParamaters'
 import './Main.css'
 
-
 const Main = () => {
+  const [time, setTime] = useState(0.1)
+  const [countNumber, setCountNumber] = useState(1)
+
   return (
-  <main className="main">Hello</main>
+    <main className="main">
+      <BlockPatameters />
+    </main>
   )
 }
 
