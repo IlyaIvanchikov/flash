@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
     height: '100vh'
   },
 }))
