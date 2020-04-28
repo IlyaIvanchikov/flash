@@ -4,12 +4,21 @@ footer {
     padding: 0 50px;
     background-color: #8fbe00;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     position: absolute;
     bottom: 0;
 }
 
-footer .container {
+footer .copyrights {
     font-size: small;
+    color: honeydew;
+}
+
+footer .social-link {
+    margin-right: 20px;
+}
+
+footer .social-links img {
+    width: 20px;
 }
