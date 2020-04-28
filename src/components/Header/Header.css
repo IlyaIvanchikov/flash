@@ -1,12 +1,23 @@
 .header {
-  background-color: aliceblue;
+  flex-grow: 1;
+  background-color: #8fbe00;
+  padding: 10px;
 }
 
 .logo {
-  width: 80px;
-  height: 100%;
+  width: 160px;
+  height: 80px;
+  border: 2px solid orange;
+  border-radius: 50px;
+  background-color: white;
+  padding: 5px;
+  margin-right: 5%;
 }
 
 .h1-header {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+.p-header {
+  font-size: 1.2rem;
 }

@@ -16,6 +16,7 @@ const socialLinks = [
 const Footer = () => {
   return (
   <footer className="page-footer">
+<<<<<<< HEAD
     <div className="social-links">
       {socialLinks.map(link => {
         return (
@@ -34,6 +35,10 @@ const Footer = () => {
     </div>
     <div className="copyrights">
       &copy; Пифагория, 2020
+=======
+    <div className="container">
+      &copy; 2020 Al & Il
+>>>>>>> header
     </div>
   </footer>
   )
