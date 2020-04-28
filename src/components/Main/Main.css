@@ -1,3 +1,23 @@
-main {
-    flex: 1 0 auto;
-}
+.main {
+    flex-grow: 1;
+    background-color: #8fbe00;
+    padding: 10px;
+  }
+  
+  .logo1 {
+    width: 200px;
+    height: 580px;
+    border: 2px solid orange;
+    border-radius: 50px;
+    background-color: white;
+    padding: 5px;
+    margin-right: 5%;
+  }
+  
+  .h1-main {
+    font-size: 1.5rem;
+  }
+  
+  .p-main {
+    font-size: 1.2rem;
+  }

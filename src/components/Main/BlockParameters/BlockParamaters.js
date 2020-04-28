@@ -1,13 +1,13 @@
 import React from 'react'
-//import Grid from '@material-ui/core/Grid'
+import Grid from '@material-ui/core/Grid'
 import './BlockParameters.css'
 
 const BlockParameters = () => {
   return (
     <div className="blockParameters">
-      <div className="formParameters">
+      <Grid container alignItems="center">
         
-      </div>
+      </Grid>
     </div>
   )
 }

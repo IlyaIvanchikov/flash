@@ -1,7 +1,8 @@
 .blockParameters {
   flex-grow: 1;
+  
 }
 
 .formParameters {
-  
+  background-color: red;
 }

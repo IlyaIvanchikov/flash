@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import BlockPatameters from './BlockParameters/BlockParamaters'
+import Grid from '@material-ui/core/Grid'
+import Logo from '../../resources/img/back.jpg';
 import './Main.css'
 
 const Main = () => {
@@ -8,7 +10,11 @@ const Main = () => {
 
   return (
     <main className="main">
-      <BlockPatameters />
+    <Grid container alignItems="center" >
+      <Grid container item  xs={8} sm={6} direction="row" alignItems="center">
+        <img src={Logo} alt="logo" className="logo1"/>
+      </Grid>
+    </Grid>
     </main>
   )
 }
