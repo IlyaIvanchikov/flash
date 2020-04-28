@@ -10,11 +10,9 @@ const Main = () => {
 
   return (
     <main className="main">
-    <Grid container alignItems="center" >
-      <Grid container item  xs={8} sm={6} direction="row" alignItems="center">
-        <img src={Logo} alt="logo" className="logo1"/>
-      </Grid>
-    </Grid>
+      <div className="test">
+
+      </div>
     </main>
   )
 }
