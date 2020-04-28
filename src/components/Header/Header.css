@@ -1,3 +1,12 @@
 .header {
-  background-color: aqua;
+  background-color: aliceblue;
+}
+
+.logo {
+  width: 80px;
+  height: 100%;
+}
+
+.h1-header {
+  font-size: 2rem;
 }
