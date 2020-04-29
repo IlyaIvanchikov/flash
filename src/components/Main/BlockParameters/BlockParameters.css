@@ -1,6 +1,19 @@
 .blockParameters {
   flex-grow: 1;
-  width: 50vw;
-  height: 25vh;
-  border: 3px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.formGroup {
+  background-color: grey;
+  width: 50%;
+  position: relative;
+  opacity: 0.8;
+  border-radius: 50px;
+  text-align: center;
+  padding: 3%;
+  margin: 5%;
+  font-size: 2rem;
 }

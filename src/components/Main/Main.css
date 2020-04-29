@@ -1,7 +1,6 @@
 .main {
     flex-grow: 1;
     background-color: #8fbe00;
-    height: 82vh;
     background-image: url('../../resources/img/background-photo.jpg');
     background-position: center center;
     background-repeat: no-repeat;
