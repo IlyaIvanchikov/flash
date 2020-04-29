@@ -1,0 +1,6 @@
+.blockParameters {
+  flex-grow: 1;
+  width: 50vw;
+  height: 25vh;
+  border: 3px solid red;
+}

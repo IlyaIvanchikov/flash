@@ -9,7 +9,7 @@ const Header = () => {
     <header className="header">
     <Grid container alignItems="center" >
       <Grid container item  xs={8} sm={6} direction="row" alignItems="center">
-        <img src={Logo} alt="logo" className="logo"/>
+        <a className="link-logo" href="/"><img src={Logo} alt="logo" className="logo"/></a>
         <Hidden smDown>
         <h1 className="h1-header">Флеш-карточки</h1>
         </Hidden>
