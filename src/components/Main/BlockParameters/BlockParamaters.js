@@ -4,9 +4,11 @@ import './BlockParameters.css'
 
 const BlockParameters = () => {
   return (
-    <div className="blockParameters">
-      <Grid container alignItems="center">
-        
+    <div className="blockParameters" >
+      <Grid container justify="center">
+        <Grid container item xs={12}>
+          
+        </Grid>
       </Grid>
     </div>
   )

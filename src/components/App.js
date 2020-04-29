@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className={classes.root}>
-      <Grid container className="test">
+      <Grid container>
         <Grid container item xs={12}>
           <Header />
         </Grid>
