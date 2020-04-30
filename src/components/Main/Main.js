@@ -1,20 +1,28 @@
 import React, { useState } from 'react'
 import BlockParamaters from './BlockParameters/BlockParamaters'
 import BlockResult from './BlockResult/BlockResult'
-// import Grid from '@material-ui/core/Grid'
 import './Main.css'
 
 const Main = () => {
   const [time, setTime] = useState(0.1)
   const [countNumber, setCountNumber] = useState(1)
+  const [checkParams, setCheckParams] = useState(true)
+  const [name, setName] = useState('')
 
+  const checkHandler = (time, countNumber, name) => {
+    setCountNumber(countNumber)
+    setName(name)
+    setTime(time)
+    setCheckParams(false)
+  }
 
-  return (
-    <main className="main">
-      <BlockParamaters />
-      {/* <BlockResult test={[countNumber, time]} /> */}
-    </main>
-  )
+  let mainContent
+  if (checkParams) {
+    mainContent = <BlockParamaters dataParams={checkHandler} />
+  } else {
+    mainContent = <BlockResult />
+  }
+  return <main className="main">{mainContent}</main>
 }
 
 export default Main

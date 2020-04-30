@@ -8,7 +8,7 @@ const BlockResult = (str) => {
       <Grid container justify="center">
         <Grid container alignItems="center"  justify="center" item xs={12}>
           <p>Результат: &nbsp;</p>
-          <input size="2" type="text" readonly value={str.test.join(' и ')}/>
+          {/* <input size="2" type="text" readonly value={str.test.join(' и ')}/> */}
         </Grid>
       </Grid>
     </div>
