@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import BlockParamaters from './BlockParameters/BlockParamaters'
+import BlockParameters from './BlockParameters/BlockParamaters'
 import BlockResult from './BlockResult/BlockResult'
 // import Grid from '@material-ui/core/Grid'
 import './Main.css'
@@ -10,9 +10,9 @@ const Main = () => {
 
 
   return (
-    <main className="main">
-      <BlockParamaters />
-      {/* <BlockResult test={[countNumber, time]} /> */}
+    <main className="main container">
+      <BlockParameters />
+      <BlockResult test={[countNumber, time]} />
     </main>
   )
 }

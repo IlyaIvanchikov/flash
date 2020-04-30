@@ -6,7 +6,7 @@ import './Header.css'
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="header container">
     <Grid container alignItems="center" >
       <Grid container item  xs={8} sm={6} direction="row" alignItems="center">
         <a className="link-logo" href="/"><img src={Logo} alt="logo" className="logo"/></a>

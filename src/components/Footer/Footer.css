@@ -1,7 +1,5 @@
 footer {
-    width: calc(100% - 100px);
-    padding: 0 50px;
-    height: 60px;
+    height: 40px;
     background-color: #8fbe00;
     display: flex;
     justify-content: space-between;
