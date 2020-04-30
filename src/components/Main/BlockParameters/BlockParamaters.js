@@ -98,7 +98,20 @@ const BlockParameters = (props) => {
             />
           </Grid>
           <Grid item>
-            м
+            <Input
+              // className={classes.input}
+              value={time}
+              margin="dense"
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              inputProps={{
+                step: 0.1,
+                min: 0.1,
+                max: 5,
+                type: 'number',
+                'aria-labelledby': 'input-slider',
+              }}
+            />
           </Grid>
         </Grid>
         {/* <Typography id="input-select" gutterBottom>
