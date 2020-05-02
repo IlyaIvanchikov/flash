@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import BlockParameters from './BlockParameters/BlockParamaters'
 import BlockResult from './BlockResult/BlockResult'
+import BlockPlay from './BlockPlay/BlockPlay'
 import './Main.css'
 
 const Main = () => {
@@ -29,6 +30,7 @@ const Main = () => {
     mainContent = <BlockParameters dataParams={checkHandler} />
   } else {
     mainContent = <BlockResult time={time} name={name} stateHandler={resultHander}/>
+    // mainContent = <BlockPlay />
   }
   return <main className="main">{mainContent}</main>
 }

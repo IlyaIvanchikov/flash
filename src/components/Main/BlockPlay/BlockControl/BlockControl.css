@@ -1,0 +1,5 @@
+.blockControl {
+  flex-grow: 1;
+  width: 100vw;
+  padding: 10px 3%;
+}

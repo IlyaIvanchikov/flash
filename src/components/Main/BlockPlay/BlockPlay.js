@@ -10,8 +10,8 @@ const BlockPlay = (props) => {
   return (
     <div className="blockPlay">
       <Control />
-      <Picture />
-      <Answer />
+      {/* <Picture />
+      <Answer /> */}
     </div>
   )
 }
