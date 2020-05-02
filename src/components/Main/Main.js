@@ -10,6 +10,7 @@ const Main = () => {
   const [name, setName] = useState('')
 
   const checkHandler = (time, countNumber, name) => {
+    console.log(`time: ${time} + countNumber: ${countNumber} + name: ${name}`)
     setCountNumber(countNumber)
     setName(name)
     setTime(time)
@@ -20,7 +21,7 @@ const Main = () => {
   if (checkParams) {
     mainContent = <BlockParameters dataParams={checkHandler} />
   } else {
-    mainContent = <BlockResult />
+    mainContent = <BlockResult time={time}/>
   }
   return <main className="main">{mainContent}</main>
 }

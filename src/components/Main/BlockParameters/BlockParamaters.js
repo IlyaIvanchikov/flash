@@ -20,26 +20,26 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: 250,
   },
-  // input: {
-  //   width: 40,
-  // },
   button: {
     width: 140,
   },
-  // formControl: {
-  //   margin: theme.spacing(1),
-  //   minWidth: 20,
-  // },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
+  formControl: {
+    margin: theme.spacing(3)
   },
+  selectEmpty: {
+    marginTop: theme.spacing(2)
+  },
+  buttonCheckParams: {
+    marginLeft: theme.spacing(3),
+    marginRight: theme.spacing(3)
+  }
 }))
 
 const BlockParameters = (props) => {
   const classes = useStyles()
 
   const [time, setTime] = React.useState(1)
-  const [countNumber, setCountNumber] = React.useState('')
+  const [countNumber, setCountNumber] = React.useState(1)
   const [name, setName] = React.useState('Пользователь')
 
   const handleTextField = (event) => {
@@ -49,9 +49,11 @@ const BlockParameters = (props) => {
   const handleSliderChange = (event, newValue) => {
     setTime(newValue)
   }
-  // const handleChange = (event) => {
-  //   setAge(event.target.value)
-  // }
+
+  const handleChange = (event) => {
+    setCountNumber(event.target.value)
+  }
+
   const handleInputChange = (event) => {
     setTime(event.target.value === '' ? '' : Number(event.target.value))
   }
@@ -80,7 +82,7 @@ const BlockParameters = (props) => {
           variant="outlined"
           onChange={handleTextField}
         />
-        <Typography id="input-slider" gutterBottom>
+        <Typography id="input-slider" variant="h4" gutterBottom>
           Укажите скорость воспроизведения картинок
         </Typography>
         <Grid container spacing={2} alignItems="center">
@@ -99,7 +101,6 @@ const BlockParameters = (props) => {
           </Grid>
           <Grid item>
             <Input
-              // className={classes.input}
               value={time}
               margin="dense"
               onChange={handleInputChange}
@@ -114,27 +115,26 @@ const BlockParameters = (props) => {
             />
           </Grid>
         </Grid>
-        {/* <Typography id="input-select" gutterBottom>
-          Укажите скорость воспроизведения картинок
+        <Typography id="input-select" variant="h4" gutterBottom>
+          Укажите желаемое количество цифр
         </Typography>
         <FormControl variant="outlined" className={classes.formControl}>
-          <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
+          <InputLabel id="select-outlined-label">Цифры</InputLabel>
           <Select
-            labelId="demo-simple-select-outlined-label"
-            id="demo-simple-select-outlined"
-            value={age}
+            labelId="select-outlined-label"
+            id="simple-select-outlined"
+            value={countNumber}
             onChange={handleChange}
-            label="Age"
+            label="countNumber"
           >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            <MenuItem value={1}>Одна</MenuItem>
+            <MenuItem value={2}>Две</MenuItem>
+            <MenuItem value={3}>Три</MenuItem>
+            <MenuItem value={4}>Четыре</MenuItem>
+            <MenuItem value={5}>Пять</MenuItem>
           </Select>
-        </FormControl>  */}
-        <Button variant="outlined" color="primary" onClick={checkData}>
+        </FormControl>
+        <Button variant="contained" color="primary" onClick={checkData} className={classes.buttonCheckParams}>
           НАЧАТЬ ИГРУ
         </Button>
       </FormGroup>

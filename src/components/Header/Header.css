@@ -1,8 +1,7 @@
 .header {
   flex-grow: 1;
   background-color: #8fbe00;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 3%;
   border-bottom: 2px solid black;
 }
 

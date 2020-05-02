@@ -16,11 +16,11 @@ import './BlockResult.css'
 
 
 
-const BlockResult = () => {
+const BlockResult = (props) => {
   return (
     <div className="blockResult" >
       <Grid className="results" container justify="center">
-      <h3>Поздравляем!</h3>
+      <h3>Поздравляем! {props.time}</h3>
         <Grid container alignItems="center"  justify="center" item xs={12}>
         <Input
               readOnly

@@ -18,7 +18,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="page-footer container">
+    <footer className="page-footer">
       <div className="social-links">
         {socialLinks.map((link) => {
           return (
