@@ -1,13 +1,11 @@
 footer {
-    width: calc(100% - 100px);
-    padding: 0 50px;
-    height: 60px;
+    height: 40px;
+    margin-top: -40px;
     background-color: #8fbe00;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    bottom: 0;
+    padding: 0 3%;
 }
 
 footer .copyrights {
