@@ -1,19 +1,39 @@
 import React from 'react'
-import { Input, Button, Grid } from '@material-ui/core'
+import { Typography, Button, Grid } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import KeyboardBackspaceSharpIcon from '@material-ui/icons/KeyboardBackspaceSharp'
+import './BlockControl.css'
 
-import Control from './BlockControl/BlockControl'
-import Answer from './BlockAnswer/BlockAnswer'
-import Picture from './BlockPicture/BlockPicture'
-import './BlockPlay.css'
+const useStyles = makeStyles((theme) => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+}))
 
-const BlockPlay = (props) => {
+const BlockControl = (props) => {
+  const classes = useStyles()
+
   return (
-    <div className="blockPlay">
-      <Control />
-      <Picture />
-      <Answer />
+    <div className="blockControl">
+      <Grid container>
+        <Grid item xs={6}>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+            startIcon={<KeyboardBackspaceSharpIcon />}
+          >
+            Начать заново
+          </Button>
+        </Grid>
+        <Grid container item xs={6} justify="flex-end">
+          <Typography variant="h4" component="h2">
+            Score: <span>{1}</span>
+          </Typography>
+        </Grid>
+      </Grid>
     </div>
   )
 }
 
-export default BlockPlay
+export default BlockControl
