@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header/Header'
 import Main from './Main/Main'
 import Footer from './Footer/Footer'
@@ -10,13 +10,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function App() {
+
+const App = () => {
+  const [name, setName] = useState('');
   const classes = useStyles()
+
+  const checkName = name => {
+    setName(name);
+  }
 
   return (
     <div className={classes.root}>
-      <Header />
-      <Main />
+      <Header name={name} />
+      <Main handleName={checkName}/>
       <Footer />
     </div>
   )

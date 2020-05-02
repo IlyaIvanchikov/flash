@@ -4,7 +4,7 @@ import Hidden from '@material-ui/core/Hidden';
 import Logo from '../../resources/img/tl.png';
 import './Header.css'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className="header">
     <Grid container alignItems="center" >
@@ -15,7 +15,7 @@ const Header = () => {
         </Hidden>
       </Grid>
       <Grid container justify="flex-end" item xs={4} sm={6}>
-        <p className="p-header">Добро пожаловать!</p>
+        <p className="p-header">Добро пожаловать {props.name}!</p>
       </Grid>
     </Grid>
     </header>
