@@ -109,6 +109,7 @@ const BlockParameters = (props) => {
                 step: 0.1,
                 min: 0.1,
                 max: 5,
+                size: 3,
                 type: 'number',
                 'aria-labelledby': 'input-slider',
               }}
