@@ -82,7 +82,7 @@ const BlockParameters = (props) => {
           variant="outlined"
           onChange={handleTextField}
         />
-        <Typography id="input-slider" variant="h4" gutterBottom>
+        <Typography id="input-slider" variant="h5" gutterBottom>
           Укажите скорость воспроизведения картинок
         </Typography>
         <Grid container spacing={2} alignItems="center">
@@ -116,7 +116,7 @@ const BlockParameters = (props) => {
             />
           </Grid>
         </Grid>
-        <Typography id="input-select" variant="h4" gutterBottom>
+        <Typography id="input-select" variant="h5" gutterBottom>
           Укажите желаемое количество цифр
         </Typography>
         <FormControl variant="outlined" className={classes.formControl}>
