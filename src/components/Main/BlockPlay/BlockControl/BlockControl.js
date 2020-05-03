@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
 
 const BlockControl = (props) => {
   const classes = useStyles()
+  const startGame = () => {
+    props.stateHandler()
+  }
 
   return (
     <div className="blockControl">
@@ -22,13 +25,14 @@ const BlockControl = (props) => {
             color="primary"
             className={classes.button}
             startIcon={<KeyboardBackspaceSharpIcon />}
+            onClick={startGame}
           >
             Начать заново
           </Button>
         </Grid>
         <Grid container item xs={6} justify="flex-end">
           <Typography variant="h4" component="h2">
-            Score: <span>{1}</span>
+            Баллы: <span>{props.score}</span>
           </Typography>
         </Grid>
       </Grid>
