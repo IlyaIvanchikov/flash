@@ -9,7 +9,7 @@ const Main = (props) => {
   const [countNumber, setCountNumber] = useState(1)
   const [checkParams, setCheckParams] = useState(true)
   // const [name, setName] = useState('')
-  const [checkResult, setCheckResult] = useState(false)
+  // const [checkResult, setCheckResult] = useState(false)
 
   const checkHandler = (time, countNumber, name) => {
     console.log(`time: ${time} + countNumber: ${countNumber} + name: ${name}`)
