@@ -7,9 +7,6 @@ import Bottom1 from '../../../../resources/img/abakus/bottom1.png';
 import Bottom2 from '../../../../resources/img/abakus/bottom2.png';
 import Bottom3 from '../../../../resources/img/abakus/bottom3.png';
 import Bottom4 from '../../../../resources/img/abakus/bottom4.png';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
 
 
 
@@ -28,7 +25,6 @@ function getRandomInRange(min, max) {
 
     return (
         <div className="blockPicture">
-            <p>{number}</p>
             <div className="oneStick">
                 <div className="stickTop">
                   <img alt="top" src={number > 4 ? Top1 : Top0} />
