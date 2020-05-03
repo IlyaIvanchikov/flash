@@ -6,14 +6,26 @@ import Answer from './BlockAnswer/BlockAnswer'
 import Picture from './BlockPicture/BlockPicture'
 import './BlockPlay.css'
 
+const DIGITS = 5
+
 const BlockPlay = (props) => {
   const paramsHandler = () => {
     props.stateHandler()
   }
+  
   return (
     <div className="blockPlay">
       <Control stateHandler={paramsHandler} score={props.score}/>
-      {/* <Picture />*/}
+      <div className="blockCard">
+        <Picture />
+        <Picture />
+        <Picture />
+        <Picture />
+        <Picture />
+        <Picture />
+        <Picture />
+        <Picture />
+      </div>
       <Answer /> 
     </div>
   )

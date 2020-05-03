@@ -3,3 +3,10 @@
   display: flex;
   flex-direction: column;
 }
+
+.blockCard {
+  display: flex;
+  flex-direction: row;
+  /* background-color: #fff; */
+  margin: 0 auto;
+}

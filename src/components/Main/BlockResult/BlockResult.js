@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   // TextField,
@@ -64,22 +64,6 @@ const BlockResult = (props) => {
       <h3>{congrats}</h3>
         <Grid container alignItems="center"  justify="center" item xs={12}>
           <p>Ты набрал {declOfNum(score, BALL_STRING)} из {gameParams.maxGameScore} возможных</p>
-
-        {/* <Input
-              readOnly
-              value={score}
-              margin="dense"
-              onChange={handleInputChange}
-              onBlur={handleBlur}
-              inputProps={{
-                step: 0.1,
-                min: 0.1,
-                max: 5,
-                type: 'number',
-                'aria-labelledby': 'input-slider',
-                size: 3
-              }}
-            /> */}
         </Grid>
         <Grid container justify="center"  item xs={12}>
           <Button className={classes.buttonCheckParams} variant="contained" color="primary" onClick={startGame}>
