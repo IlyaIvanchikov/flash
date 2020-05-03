@@ -8,8 +8,8 @@ const Main = (props) => {
   const [time, setTime] = useState(0.1)
   const [countNumber, setCountNumber] = useState(1)
   const [checkParams, setCheckParams] = useState(true)
-  // const [name, setName] = useState('')
-  // const [checkResult, setCheckResult] = useState(false)
+  const [score, setScore] = useState(0)
+  const [checkResult, setCheckResult] = useState(false)
 
   const checkHandler = (time, countNumber, name) => {
     console.log(`time: ${time} + countNumber: ${countNumber} + name: ${name}`)
@@ -19,7 +19,7 @@ const Main = (props) => {
     setCheckParams(false)
   }
 
-  const resultHander = () => {
+  const paramsHandler = () => {
     // setCheckResult(!checkResult)
     setCheckParams(!checkParams)
   }
@@ -29,8 +29,8 @@ const Main = (props) => {
   if (checkParams) {
     mainContent = <BlockParameters dataParams={checkHandler} />
   } else {
-    mainContent = <BlockResult time={time} name={props.name} stateHandler={resultHander}/>
-    // mainContent = <BlockPlay />
+    // mainContent = <BlockResult time={time} name={props.name} stateHandler={paramsHandler} score={score}/>
+    mainContent = <BlockPlay stateHandler={paramsHandler} score={score}/>
   }
   return <main className="main">{mainContent}</main>
 }

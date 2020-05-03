@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className={classes.root}>
       <Header name={name} />
-      <Main handleName={checkName}  name={name}/>
+      <Main handleName={checkName} name={name}/>
       <Footer />
     </div>
   )
