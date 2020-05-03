@@ -1,0 +1,33 @@
+.blockPicture {
+    display: flex;
+}
+
+.oneStick {
+    background-image: url('../../../../resources/img/abakus/stick.png');
+    width: 45px;
+    height: 139px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stickTop {
+    height: 41px;
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.stickBottom {
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    align-content: flex-end;
+}
+
+.stickBottom img {
+    height: 18px;
+    display: block;
+    transform: translateY(16px);
+}
