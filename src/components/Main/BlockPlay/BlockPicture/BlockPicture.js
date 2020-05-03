@@ -1,36 +1,16 @@
 import React from 'react';
 import './BlockPicture.css'
-import StickAbakus from '../../../../resources/img/abakus/stick.png';
-import BoneAbakus from '../../../../resources/img/abakus/bone.png';
+import Top0 from '../../../../resources/img/abakus/top0.png';
+import Top1 from '../../../../resources/img/abakus/top1.png';
+import Bottom0 from '../../../../resources/img/abakus/bottom0.png';
+import Bottom1 from '../../../../resources/img/abakus/bottom1.png';
+import Bottom2 from '../../../../resources/img/abakus/bottom2.png';
+import Bottom3 from '../../../../resources/img/abakus/bottom3.png';
+import Bottom4 from '../../../../resources/img/abakus/bottom4.png';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-const digits = 5
-
-const useStyles = makeStyles((theme) => ({
-    bone5On: {
-      marginTop: 0,
-      height: "18px"
-    },
-    bone5Off: {
-        marginTop: "17px",
-        height: "18px"
-      },
-    button: {
-      width: 140,
-    },
-    boneOn: {
-      transform: "translateY(0px) !important"
-    },
-    selectEmpty: {
-      marginTop: theme.spacing(2)
-    },
-    buttonCheckParams: {
-      marginLeft: theme.spacing(3),
-      marginRight: theme.spacing(3)
-    }
-  }))
 
 
 function getRandomInRange(min, max) {
@@ -38,56 +18,23 @@ function getRandomInRange(min, max) {
 }
   
   export default function MediaCard() {
-      const classes = useStyles()
       const number = getRandomInRange(0, 9)
-      const isMoveBone = []
-      if (number === 0 || number === 5) {
-        for (let i = 0; i < 4; i++) {
-            isMoveBone.push(false)
-        }
-      } else {
-        if (number === 1 || number === 6) {
-            isMoveBone.push(true)
-            for (let i = 1; i < 4; i++) {
-                isMoveBone.push(false)
-            }
-        }
-        if (number === 2 || number === 7) {
-            isMoveBone.push(true)
-            isMoveBone.push(true)
-            for (let i = 2; i < 4; i++) {
-                isMoveBone.push(false)
-            }
-        }
-        if (number === 3 || number === 8) {
-            isMoveBone.push(true)
-            isMoveBone.push(true)
-            isMoveBone.push(true)
-            for (let i = 3; i < 4; i++) {
-                isMoveBone.push(false)
-            }
-        }
-        if (number === 4 || number === 9) {
-            for (let i = 0; i < 4; i++) {
-                isMoveBone.push(true)
-            }
-            isMoveBone.push(false)
-        }
-        
-      }
+      let bottomPicture
+      if (number === 0 || number === 5) bottomPicture = Bottom0
+      if (number === 1 || number === 6) bottomPicture = Bottom1
+      if (number === 2 || number === 7) bottomPicture = Bottom2
+      if (number === 3 || number === 8) bottomPicture = Bottom3
+      if (number === 4 || number === 9) bottomPicture = Bottom4
 
     return (
         <div className="blockPicture">
             <p>{number}</p>
             <div className="oneStick">
                 <div className="stickTop">
-                    <img alt="" className={number > 4 ? classes.bone5Off : classes.bone5On} src={BoneAbakus} />
+                  <img alt="top" src={number > 4 ? Top1 : Top0} />
                 </div>
                 <div className="stickBottom">
-                    <img alt="" src={BoneAbakus} className={isMoveBone[0] ? classes.boneOn : ""}/>
-                    <img alt="" src={BoneAbakus} className={isMoveBone[1] ? classes.boneOn : ""}/>
-                    <img alt="" src={BoneAbakus} className={isMoveBone[2] ? classes.boneOn : ""}/>
-                    <img alt="" src={BoneAbakus} className={isMoveBone[3] ? classes.boneOn : ""}/>
+                  <img alt="bottom" src={bottomPicture} />
                 </div>
             </div>
       </div>
