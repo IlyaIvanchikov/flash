@@ -36,9 +36,10 @@ function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-export default function MediaCard() {
+export default function MediaCard(props) {
   const classes = useStyles()
   const number = getRandomInRange(0, 9)
+  props.currentHandler(number)
   const isMoveBone = []
   if (number === 0 || number === 5) {
     for (let i = 0; i < 4; i++) {
