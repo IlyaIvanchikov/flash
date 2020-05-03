@@ -7,9 +7,12 @@ import Picture from './BlockPicture/BlockPicture'
 import './BlockPlay.css'
 
 const BlockPlay = (props) => {
+  const paramsHandler = () => {
+    props.stateHandler()
+  }
   return (
     <div className="blockPlay">
-      <Control />
+      <Control stateHandler={paramsHandler} score={props.score}/>
       {/* <Picture />
       <Answer /> */}
     </div>
