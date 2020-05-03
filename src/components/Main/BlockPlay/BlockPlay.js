@@ -13,8 +13,8 @@ const BlockPlay = (props) => {
   return (
     <div className="blockPlay">
       <Control stateHandler={paramsHandler} score={props.score}/>
-      {/* <Picture />
-      <Answer /> */}
+      {/* <Picture />*/}
+      <Answer /> 
     </div>
   )
 }
