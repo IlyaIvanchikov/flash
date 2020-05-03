@@ -30,7 +30,7 @@ const Main = (props) => {
     mainContent = <BlockParameters dataParams={checkHandler} />
   } else {
     // mainContent = <BlockResult time={time} name={props.name} stateHandler={paramsHandler} score={score}/>
-    mainContent = <BlockPlay stateHandler={paramsHandler} score={score}/>
+    mainContent = <BlockPlay stateHandler={paramsHandler} score={score} countNumber={countNumber}/>
   }
   return <main className="main">{mainContent}</main>
 }

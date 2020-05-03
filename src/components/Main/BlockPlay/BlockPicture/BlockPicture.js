@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import './BlockPicture.css'
 import Top0 from '../../../../resources/img/abakus/top0.png';
 import Top1 from '../../../../resources/img/abakus/top1.png';
@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 
 
 function getRandomInRange(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min
 }
   
   export default function MediaCard() {
@@ -38,5 +38,5 @@ function getRandomInRange(min, max) {
                 </div>
             </div>
       </div>
-    );
-  }
+  )
+}
