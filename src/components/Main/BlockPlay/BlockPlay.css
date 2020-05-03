@@ -6,7 +6,11 @@
 
 .blockCard {
   display: flex;
+  box-sizing: border-box;
+  padding: 5%;
   flex-direction: row;
-  /* background-color: #fff; */
+  max-width: 95%;
   margin: 0 auto;
+  border-radius: 7vh;
+  background-color: rgba(0, 0, 0, 0.3);
 }
