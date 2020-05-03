@@ -1,13 +1,12 @@
 .blockPlay {
   flex-grow: 1;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .blockCard {
   display: flex;
   flex-direction: row;
-  background-color: #fff;
+  /* background-color: #fff; */
+  margin: 0 auto;
 }

@@ -26,7 +26,7 @@ const BlockPlay = (props) => {
         <Picture />
         <Picture />
       </div>
-      {/* <Answer /> */}
+      <Answer /> 
     </div>
   )
 }
