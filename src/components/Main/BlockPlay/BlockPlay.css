@@ -5,3 +5,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.blockCard {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
