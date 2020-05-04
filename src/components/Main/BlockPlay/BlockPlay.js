@@ -6,7 +6,10 @@ import './BlockPlay.css'
 
 const BlockPlay = (props) => {
   const countNumber = props.countNumber
-  const arr = []
+  const countRound = props.countRound
+  const time = props.time * 1000
+  let arr = []
+
   const getRandomInRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
@@ -17,33 +20,42 @@ const BlockPlay = (props) => {
     return arr
   }
 
+  const [show, setShow] = useState(true)
   const [trueArr, setTrueArr] = useState(createArr(arr))
+  const [specifiedAnswer, setSpecifiedAnswer] = useState('')
 
   const paramsHandler = () => {
     props.stateHandler()
   }
 
-  let countPicture
+  const checkAnswer = (answer) => {
+    arr = []
+    props.answerClickHandler()
+    setTrueArr(createArr(arr))
+    setSpecifiedAnswer(answer)
+    setShow(!show)
+  }
 
-  const timeRepeatPicture = () => {
-     (countPicture = [...Array(countNumber)].map((e, i) => (
-      <Picture key={i} random={trueArr[i]} />
-    )))
-  }
-  const timeBlackPicture = () => {
-     (countPicture = <p>Hello</p>)
-  }
-  timeRepeatPicture();
-  
-  useEffect( () => {
-    setTimeout(timeBlackPicture, 5000)
-  },[])
+  //Условный рендеринг картинки
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(false)
+    }, time)
+  },[countRound])
+
+  const countPicture = [...Array(countNumber)].map((e, i) => (
+    <Picture key={i} random={trueArr[i]} />
+  ))
+  const thinkingPicture = <p>Подумайте</p>
 
   return (
     <div className="blockPlay">
       <Control stateHandler={paramsHandler} score={props.score} />
-      <div className="blockCard">{countPicture}</div>
-      <Answer />
+      <div className="blockCard">
+        {show && countPicture}
+        {!show && thinkingPicture}
+      </div>
+      <Answer answerHandler={checkAnswer} />
     </div>
   )
 }

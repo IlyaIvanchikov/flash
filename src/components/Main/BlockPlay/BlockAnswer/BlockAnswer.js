@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TextField, Button, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import SendIcon from '@material-ui/icons/Send';
@@ -15,8 +15,13 @@ const useStyles = makeStyles((theme) => ({
 
 const BlockAnswer = (props) => {
   const classes = useStyles()
+  const [answerText, setAnswerText] = useState('')
+
+  const handleTextField = event => {
+    setAnswerText(event.target.value)
+  }
   const startGame = () => {
-    props.stateHandler()
+    props.answerHandler(answerText)
   }
 
   return (
@@ -29,6 +34,7 @@ const BlockAnswer = (props) => {
             label="Вводите сюда свой ответ"
             variant="outlined"
             color="primary"
+            onChange={handleTextField}
           />
           <Button
             variant="contained"
