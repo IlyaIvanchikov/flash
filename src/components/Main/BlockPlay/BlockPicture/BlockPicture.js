@@ -8,13 +8,8 @@ import Bottom2 from '../../../../resources/img/abakus/bottom2.png'
 import Bottom3 from '../../../../resources/img/abakus/bottom3.png'
 import Bottom4 from '../../../../resources/img/abakus/bottom4.png'
 
-function getRandomInRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
-
 export default function MediaCard(props) {
-  const number = getRandomInRange(0, 9)
-  props.currentHandler(number)
+  const number = props.random
   let bottomPicture
   if (number === 0 || number === 5) bottomPicture = Bottom0
   if (number === 1 || number === 6) bottomPicture = Bottom1

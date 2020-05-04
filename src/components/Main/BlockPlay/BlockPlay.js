@@ -1,25 +1,44 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Control from './BlockControl/BlockControl'
 import Answer from './BlockAnswer/BlockAnswer'
 import Picture from './BlockPicture/BlockPicture'
 import './BlockPlay.css'
 
 const BlockPlay = (props) => {
-  const [trueNumber, setTrueNumber] = useState([])
+  const countNumber = props.countNumber
+  const arr = []
+  const getRandomInRange = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+  const createArr = (arr) => {
+    for (let i = 0; i < countNumber; i++) {
+      arr.push(getRandomInRange(0, 9))
+    }
+    return arr
+  }
+
+  const [trueArr, setTrueArr] = useState(createArr(arr))
 
   const paramsHandler = () => {
     props.stateHandler()
   }
-  const answerHandler = (number) => {
-    setTrueNumber(trueNumber => [...trueNumber, number])
-    // countTrueAnswer.push(number)
-    // setTrueNumber(countTrueAnswer)
+
+  let countPicture
+
+  const timeRepeatPicture = () => {
+     (countPicture = [...Array(countNumber)].map((e, i) => (
+      <Picture key={i} random={trueArr[i]} />
+    )))
   }
-  console.log(trueNumber)
-  // console.log(trueNumber)
-  const countPicture = [...Array(props.countNumber)].map((e, i) => (
-    <Picture key={i} currentHandler={answerHandler} />
-  ))
+  const timeBlackPicture = () => {
+     (countPicture = <p>Hello</p>)
+  }
+  timeRepeatPicture();
+  
+  useEffect( () => {
+    setTimeout(timeBlackPicture, 5000)
+  },[])
+
   return (
     <div className="blockPlay">
       <Control stateHandler={paramsHandler} score={props.score} />
