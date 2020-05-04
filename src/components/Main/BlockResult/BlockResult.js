@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
+import Fireworks from '../../../resources/img/Fireworks.gif'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   // TextField,
@@ -30,8 +31,10 @@ const useStyles = makeStyles((theme) => ({
 
 const gameParams = {
   failMessage: "В этот раз не получилось",
-  successMessage: "Поздравляем",
-  minGameScore: 4,
+  goodMessage: "Хороший результат, но тебе нужно еще потренироваться",
+  successMessage: "Поздравляем, ты набрал максимальный балл!",
+  minGameScore: 3,
+  mediumGameScore: 4, 
   maxGameScore: 5
 }
 
@@ -50,36 +53,37 @@ const BlockResult = (props) => {
   }
 
   const classes = useStyles()
-  const score = props.time // временнная переменная тестирования
+
+  const SCORE = props.time // временнная переменная тестирования
   let congrats
-  if (score >= gameParams.minGameScore) {
-    congrats = `${gameParams.successMessage}, ${props.name}!`
+  if (SCORE > gameParams.mediumGameScore) {
+    congrats = gameParams.successMessage
+  } else if (SCORE <= gameParams.mediumGameScore && SCORE >= gameParams.minGameScore) {
+    congrats = gameParams.goodMessage
   } else {
     congrats = gameParams.failMessage
   }
 
+  useEffect(() => {
+      if (congrats === gameParams.successMessage) {
+        setTimeout(() => {
+          document.querySelector('.greatingsBlock').style.display = "block"
+          setTimeout(() => {
+            document.querySelector('.greatingsBlock').style.display = "none"
+          }, 3000)
+        }, 500)
+      }
+  });
+
   return (
     <div className="blockResult" >
+      <div className="greatingsBlock">
+        <img alt="Fireworks" src={Fireworks} />
+      </div>
       <Grid className="results" container justify="center">
       <h3>{congrats}</h3>
         <Grid container alignItems="center"  justify="center" item xs={12}>
-          <p>Ты набрал {declOfNum(score, BALL_STRING)} из {gameParams.maxGameScore} возможных</p>
-
-        {/* <Input
-              readOnly
-              value={score}
-              margin="dense"
-              onChange={handleInputChange}
-              onBlur={handleBlur}
-              inputProps={{
-                step: 0.1,
-                min: 0.1,
-                max: 5,
-                type: 'number',
-                'aria-labelledby': 'input-slider',
-                size: 3
-              }}
-            /> */}
+          <p>Ты набрал {declOfNum(SCORE, BALL_STRING)} из {gameParams.maxGameScore} возможных</p>
         </Grid>
         <Grid container justify="center"  item xs={12}>
           <Button className={classes.buttonCheckParams} variant="contained" color="primary" onClick={startGame}>
