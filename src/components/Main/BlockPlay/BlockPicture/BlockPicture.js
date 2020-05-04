@@ -8,10 +8,8 @@ import Bottom2 from '../../../../resources/img/abakus/bottom2.png'
 import Bottom3 from '../../../../resources/img/abakus/bottom3.png'
 import Bottom4 from '../../../../resources/img/abakus/bottom4.png'
 
-
-
 export default function MediaCard(props) {
-  const number =  props.random
+  const number = props.random
   let bottomPicture
   if (number === 0 || number === 5) bottomPicture = Bottom0
   if (number === 1 || number === 6) bottomPicture = Bottom1

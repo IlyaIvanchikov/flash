@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Control from './BlockControl/BlockControl'
 import Answer from './BlockAnswer/BlockAnswer'
 import Picture from './BlockPicture/BlockPicture'
@@ -23,9 +23,21 @@ const BlockPlay = (props) => {
     props.stateHandler()
   }
 
-  const countPicture = [...Array(countNumber)].map((e, i) => (
-    <Picture key={i} random={trueArr[i]} />
-  ))
+  let countPicture
+
+  const timeRepeatPicture = () => {
+     (countPicture = [...Array(countNumber)].map((e, i) => (
+      <Picture key={i} random={trueArr[i]} />
+    )))
+  }
+  const timeBlackPicture = () => {
+     (countPicture = <p>Hello</p>)
+  }
+  timeRepeatPicture();
+  
+  useEffect( () => {
+    setTimeout(timeBlackPicture, 5000)
+  },[])
 
   return (
     <div className="blockPlay">
