@@ -48,7 +48,7 @@ const BlockPlay = (props) => {
   const countPicture = [...Array(countNumber)].map((e, i) => (
     <Picture key={i} random={trueArr[i]} />
   ))
-  const thinkingPicture = <img alt="quastion" width="100px" src={quastionMark} />
+  const thinkingPicture = <img className="questionImg" alt="quastion" src={quastionMark} />
   return (
     <div className="blockPlay">
       <Control stateHandler={paramsHandler} score={props.score} />

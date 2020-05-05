@@ -27,26 +27,25 @@ const BlockAnswer = (props) => {
   const [rounds, setRound] = useState(DEFAULT_ROUNDS)
 
   const handleTextField = event => {
-    let answer = event.target.value
-    if (answer === "0" || +answer > 0) {
-      // document.querySelector('#submit').disabled = false
-      // document.querySelector('#outlined-secondary').setAttribute('aria-invalid', true)
-      setAnswerText(+answer) 
-      
-    } else {
-      setAnswerText(null)
-      // document.querySelector('#submit').disabled = true
-      // document.querySelector('#outlined-secondary').setAttribute('aria-invalid', false)
-    }
+    let answer = event.target.value;
+    (answer === "0" || +answer > 0) ? setAnswerText(+answer) : setAnswerText(null)
   }
 
   const focusElem = () => {
+    const inputAnswer = document.querySelector('#outlined-secondary')
     if (rounds > 1) {
-      setTimeout(() => document.querySelector('.blockPicture').focus(), 10)
-      setTimeout(() => {
-        document.querySelector('#outlined-secondary').focus()
-        
-      }, 100)
+      // setTimeout(() => {
+      //   const blockPicture = document.querySelector('.blockPicture')
+      //   console.log(blockPicture, inputAnswer)
+      //   blockPicture.focus()
+      // }, 10)
+      if (inputAnswer) {
+        setTimeout(() => {
+          console.log(inputAnswer)
+          inputAnswer.focus()
+          
+        }, 1000)
+      }
     }
   }
 
