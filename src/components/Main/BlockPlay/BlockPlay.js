@@ -56,7 +56,7 @@ const BlockPlay = (props) => {
         {show && countPicture}
         {!show && thinkingPicture}
       </div>
-      <Answer answerHandler={checkAnswer} />
+      <Answer rounds={props.countRound} answerHandler={checkAnswer} />
     </div>
   )
 }

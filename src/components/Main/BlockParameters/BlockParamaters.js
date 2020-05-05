@@ -76,14 +76,14 @@ const BlockParameters = (props) => {
         <h3>Введите параметры для начала игры</h3>
         <TextField
           id="outlined-helperText"
-          label="Вводите текст"
+          label="Введите ваше имя"
           defaultValue={name}
-          helperText="Введите ваше имя"
+          // helperText="Введите ваше имя"
           variant="outlined"
           onChange={handleTextField}
         />
         <Typography id="input-slider" variant="h5" gutterBottom>
-          Укажите скорость воспроизведения картинок
+          Время показа карточки в сек.
         </Typography>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
@@ -117,7 +117,7 @@ const BlockParameters = (props) => {
           </Grid>
         </Grid>
         <Typography id="input-select" variant="h5" gutterBottom>
-          Укажите желаемое количество цифр
+          Количество цифр
         </Typography>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="select-outlined-label">Цифры</InputLabel>

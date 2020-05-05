@@ -1,7 +1,7 @@
 .blockPicture {
     display: flex;
     line-height: 0;
-    
+    outline: 0;
 }
 
 .oneStick {
@@ -11,5 +11,5 @@
 
 .oneStick img {
     width: 100%;
-    max-width: 100px;
+    max-width: 80px;
 }
