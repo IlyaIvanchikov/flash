@@ -28,47 +28,44 @@ const BlockAnswer = (props) => {
     setAnswerText(event.target.value)
   }
 
-  // const focusElem = () => {
-  //   if (rounds > 1) {
-  //     setTimeout(() => document.querySelector('.blockPicture').focus(), 10)
-  //     setTimeout(() => {
-  //       document.querySelector('#outlined-secondary').focus()
-        
-  //     }, 100)
-  //   }
-  // }
-
 const startGame = () => {
     props.answerHandler(answerText)
     setAnswerText('')
 }
 
-  return (
-    <div tabIndex="4" className="blockAnswer">
-      <Grid container>
-        <Grid item container justify="center" alignItems="center" xs={12}>
+return (
+  <div tabIndex="4" className="blockAnswer">
+    <Grid container>
+      <Grid item container justify="center" alignItems="center" xs={12}>
+      <form id="answerForm">
           <TextField
+            type="number"
+            required
             className={classes.textField}
             id="outlined-secondary"
-            label="Вводите сюда свой ответ"
+            label="Введите ответ"
             variant="outlined"
-            value={answerText}
             color="primary"
+            value={answerText}
             onChange={handleTextField}
           />
           <Button
             variant="contained"
+            id="submit"
+            // children={false}
+            type="submit"
             color="primary"
+            prevent="true"
+            onClick={startGame}
             className={classes.button}
             startIcon={<SendIcon />}
-            onClick={startGame}
           >
-            Отправить
           </Button>
-        </Grid>
+        </form>
       </Grid>
-    </div>
-  )
+    </Grid>
+  </div>
+)
 }
 
 export default BlockAnswer
