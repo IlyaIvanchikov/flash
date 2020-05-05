@@ -18,7 +18,7 @@ export default function MediaCard(props) {
   if (number === 4 || number === 9) bottomPicture = Bottom4
 
   return (
-    <div className="blockPicture">
+    <div id="blockPicture" tabIndex="3" className="blockPicture">
       <div className="oneStick">
         <div className="stickTop">
           <img alt="top" src={number > 4 ? Top1 : Top0} />
