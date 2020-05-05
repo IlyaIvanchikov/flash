@@ -28,7 +28,6 @@ const BlockAnswer = (props) => {
 
   const handleTextField = event => {
     let answer = event.target.value
-    console.log('sd', typeof(answer))
     if (answer === "0" || +answer > 0) {
       // document.querySelector('#submit').disabled = false
       // document.querySelector('#outlined-secondary').setAttribute('aria-invalid', true)
@@ -42,8 +41,7 @@ const BlockAnswer = (props) => {
   }
 
   const focusElem = () => {
-    if (DEFAULT_ROUNDS - rounds <= DEFAULT_ROUNDS - 2) {
-      console.log('rounds')
+    if (rounds > 1) {
       setTimeout(() => document.querySelector('.blockPicture').focus(), 10)
       setTimeout(() => {
         document.querySelector('#outlined-secondary').focus()
