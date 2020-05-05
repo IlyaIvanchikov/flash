@@ -15,7 +15,7 @@ const Header = (props) => {
         </Hidden>
       </Grid>
       <Grid container justify="flex-end" item xs={4} sm={6}>
-        <p className="p-header">Добро пожаловать {props.name}!</p>
+        <p className="p-header">Рад тебя видеть, {props.name || "друг"}!</p>
       </Grid>
     </Grid>
     </header>

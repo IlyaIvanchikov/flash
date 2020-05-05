@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Control from './BlockControl/BlockControl'
 import Answer from './BlockAnswer/BlockAnswer'
 import Picture from './BlockPicture/BlockPicture'
+import quastionMark from '../../../resources/img/quastion.jpg'
 import './BlockPlay.css'
 
 const BlockPlay = (props) => {
@@ -13,6 +14,7 @@ const BlockPlay = (props) => {
   const getRandomInRange = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
+
   const createArr = (arr) => {
     for (let i = 0; i < countNumber; i++) {
       arr.push(getRandomInRange(0, 9))
@@ -38,16 +40,15 @@ const BlockPlay = (props) => {
 
   //Условный рендеринг картинки
   useEffect(() => {
-    setTimeout(() => {
+     setTimeout(() => {
       setShow(false)
-    }, time)
-  },[countRound])
+    }, time);
+  }, [countRound, time])
 
   const countPicture = [...Array(countNumber)].map((e, i) => (
     <Picture key={i} random={trueArr[i]} />
   ))
-  const thinkingPicture = <p>Подумайте</p>
-
+  const thinkingPicture = <img alt="quastion" width="100px" src={quastionMark} />
   return (
     <div className="blockPlay">
       <Control stateHandler={paramsHandler} score={props.score} />

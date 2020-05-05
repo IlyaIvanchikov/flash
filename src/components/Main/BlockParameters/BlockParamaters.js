@@ -40,7 +40,7 @@ const BlockParameters = (props) => {
 
   const [time, setTime] = React.useState(1)
   const [countNumber, setCountNumber] = React.useState(1)
-  const [name, setName] = React.useState('Пользователь')
+  const [name, setName] = React.useState('пользователь')
 
   const handleTextField = (event) => {
     setName(event.target.value)
