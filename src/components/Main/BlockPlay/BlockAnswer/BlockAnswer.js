@@ -22,6 +22,7 @@ const BlockAnswer = (props) => {
   }
   const startGame = () => {
     props.answerHandler(answerText)
+    setAnswerText('')
   }
 
   return (
@@ -33,6 +34,7 @@ const BlockAnswer = (props) => {
             id="outlined-secondary"
             label="Вводите сюда свой ответ"
             variant="outlined"
+            value={answerText}
             color="primary"
             onChange={handleTextField}
           />
