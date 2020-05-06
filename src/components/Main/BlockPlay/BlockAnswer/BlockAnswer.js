@@ -21,6 +21,9 @@ const BlockAnswer = (props) => {
   const classes = useStyles()
   const [answerText, setAnswerText] = useState('')
   const trueArr = props.trueArr
+  const show = props.show
+  const score = props.score
+  let buttonAnswer
   const correctAudioPlayer = useRef()
   const wrongAudioPlayer = useRef()
   const handleTextField = (event) => {
@@ -31,12 +34,44 @@ const BlockAnswer = (props) => {
     event.preventDefault()
     const strAnswer = trueArr.join('')
     if (strAnswer === answerText) {
+      props.answerHandler(answerText, score+1)
+      correctAudioPlayer.current.currentTime = 0;
       correctAudioPlayer.current.play()
     } else if (strAnswer !== answerText) {
+      props.answerHandler(answerText, score)
+      wrongAudioPlayer.current.currentTime = 0;
       wrongAudioPlayer.current.play()
     }
-    props.answerHandler(answerText)
     document.querySelector('#outlined-secondary').value = ''
+  }
+
+  if (show) {
+    buttonAnswer = (
+      <Button
+        variant="contained"
+        children={false}
+        id="submit"
+        type="submit"
+        color="primary"
+        prevent="true"
+        className={classes.button}
+        startIcon={<SendIcon />}
+        disabled
+      ></Button>
+    )
+  } else {
+    buttonAnswer = (
+      <Button
+        variant="contained"
+        children={false}
+        id="submit"
+        type="submit"
+        color="primary"
+        prevent="true"
+        className={classes.button}
+        startIcon={<SendIcon />}
+      ></Button>
+    )
   }
 
   return (
@@ -54,16 +89,7 @@ const BlockAnswer = (props) => {
               color="primary"
               onChange={handleTextField}
             />
-            <Button
-              variant="contained"
-              children={false}
-              id="submit"
-              type="submit"
-              color="primary"
-              prevent="true"
-              className={classes.button}
-              startIcon={<SendIcon />}
-            ></Button>
+            {buttonAnswer}
             <audio
               src="https://zvukipro.com/uploads/files/2018-10/1540308965_jg-032316-sfx-elearning-incorrect-answer-sound-3.mp3"
               ref={wrongAudioPlayer}

@@ -8,6 +8,7 @@ import './BlockPlay.css'
 const BlockPlay = (props) => {
   const countNumber = props.countNumber
   const countRound = props.countRound
+  const score = props.score
   const time = props.time * 1000
   let arr = []
 
@@ -28,8 +29,8 @@ const BlockPlay = (props) => {
     props.stateHandler()
   }
 
-  const checkAnswer = (answer) => {
-    props.answerClickHandler()
+  const checkAnswer = (answer, score) => {
+    props.answerClickHandler(score)
     arr = []
     setTrueArr(createArr(arr))
     setShow(!show)
@@ -47,12 +48,12 @@ const BlockPlay = (props) => {
   const thinkingPicture = <img className="questionImg" alt="quastion" src={quastionMark} />
   return (
     <div className="blockPlay">
-      <Control stateHandler={paramsHandler} score={props.score} />
+      <Control stateHandler={paramsHandler} score={score} />
       <div className="blockCard">
         {show && countPicture}
         {!show && thinkingPicture}
       </div>
-      <Answer rounds={props.countRound} answerHandler={checkAnswer} show={show}  trueArr={trueArr}/>
+      <Answer rounds={props.countRound} answerHandler={checkAnswer} show={show} score={score} trueArr={trueArr}/>
     </div>
   )
 }
