@@ -20,51 +20,17 @@ const useStyles = makeStyles((theme) => ({
 
 
 const BlockAnswer = (props) => {
-  
-  const DEFAULT_ROUNDS = 5
   const classes = useStyles()
   const [answerText, setAnswerText] = useState('')
-  const [rounds, setRound] = useState(DEFAULT_ROUNDS)
 
   const handleTextField = event => {
-    let answer = event.target.value
-    if (answer === "0" || +answer > 0) {
-      // document.querySelector('#submit').disabled = false
-      // document.querySelector('#outlined-secondary').setAttribute('aria-invalid', true)
-      setAnswerText(+answer) 
-      
-    } else {
-      setAnswerText(null)
-      // document.querySelector('#submit').disabled = true
-      // document.querySelector('#outlined-secondary').setAttribute('aria-invalid', false)
-    }
+      setAnswerText(answerText) 
   }
-
-  const focusElem = () => {
-    if (rounds > 1) {
-      setTimeout(() => document.querySelector('.blockPicture').focus(), 10)
-      setTimeout(() => {
-        document.querySelector('#outlined-secondary').focus()
-        
-      }, 100)
-    }
-  }
-
 
   const startGame = event => {
     event.preventDefault();
-    const input = document.querySelector('#outlined-secondary')
-    input.readonly = true
-    if (answerText !== null) {
-      props.answerHandler(answerText)
-      const counter = rounds - 1
-      setRound(counter)
-      focusElem()
-      input.value = ""
-    } else {
-      alert('введите число')
-      input.value = ""
-    }
+    props.answerHandler(answerText)
+    document.querySelector('#outlined-secondary').value = ""
   }
 
   return (
@@ -74,22 +40,23 @@ const BlockAnswer = (props) => {
         <form id="answerForm" onSubmit={startGame}>
             <TextField
               type="number"
+              required
               className={classes.textField}
               id="outlined-secondary"
               label="Введите ответ"
               variant="outlined"
               color="primary"
-              onInput={handleTextField}
+              onChange={handleTextField}
             />
             <Button
               variant="contained"
+              children={false}
               id="submit"
               type="submit"
               color="primary"
               prevent="true"
               className={classes.button}
               startIcon={<SendIcon />}
-              onClick={startGame}
             >
             </Button>
           </form>
