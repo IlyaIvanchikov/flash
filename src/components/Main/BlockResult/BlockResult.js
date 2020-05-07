@@ -54,7 +54,7 @@ const BlockResult = (props) => {
 
   const classes = useStyles()
 
-  const SCORE = props.time // временнная переменная тестирования
+  const SCORE = props.score
   let congrats
   if (SCORE > gameParams.mediumGameScore) {
     congrats = gameParams.successMessage
