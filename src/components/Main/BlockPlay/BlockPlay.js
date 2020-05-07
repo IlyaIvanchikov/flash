@@ -3,8 +3,9 @@ import Control from './BlockControl/BlockControl'
 import Answer from './BlockAnswer/BlockAnswer'
 import Picture from './BlockPicture/BlockPicture'
 import quastionMark from '../../../resources/img/quastion.jpg'
-import './BlockPlay.css'
 
+import './BlockPlay.css'
+//const Picture = React.lazy(() => import('./BlockPicture/BlockPicture'));
 const BlockPlay = (props) => {
   const countNumber = props.countNumber
   const countRound = props.countRound
@@ -45,6 +46,7 @@ const BlockPlay = (props) => {
   const countPicture = [...Array(countNumber)].map((e, i) => (
     <Picture key={i} random={trueArr[i]}/>
   ))
+
   const thinkingPicture = <img className="questionImg" alt="quastion" src={quastionMark} />
   return (
     <div className="blockPlay">
