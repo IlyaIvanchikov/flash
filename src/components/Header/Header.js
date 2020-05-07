@@ -11,26 +11,17 @@ const SALUTATION = "Рады тебя видеть, "
 const Header = (props) => {
   return (
     <header className="header blockShadow">
-        <div>
+      <Grid container alignItems="center">
+        <Grid container item  xs={8} sm={6} direction="row" alignItems="center">
           <a className="link-logo" href="/"><img src={Logo} alt="logo" className="logo"/></a>
-        </div>
-          <div className="title-hidden">
-            <h1 className="h1-header">{SITE_TITLE}</h1>
-          </div>
-        <div container justify="flex-end" item xs={4} sm={6}>
-          <p className="p-header">{SALUTATION + (props.name || DEFAULT_NAME)}!</p>
-        </div>
-    {/* <Grid container alignItems="center">
-      <Grid container item xs={4} sm={6} direction="row" alignItems="center">
-        <a className="link-logo" href="/"><img src={Logo} alt="logo" className="logo"/></a>
-      </Grid>
-        <Hidden xs={4} smDown>
+          <Hidden smDown>
           <h1 className="h1-header">{SITE_TITLE}</h1>
-        </Hidden>
-      <Grid container justify="flex-end" item xs={4} sm={6}>
-        <p className="p-header">{SALUTATION + (props.name || DEFAULT_NAME)}!</p>
+          </Hidden>
+        </Grid>
+        <Grid container justify="flex-end" item xs={4} sm={6}>
+          <p className="p-header">{SALUTATION + (props.name || DEFAULT_NAME)}!</p>
+        </Grid>
       </Grid>
-    </Grid> */}
     </header>
   )
 }

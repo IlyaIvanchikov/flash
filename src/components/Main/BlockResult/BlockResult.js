@@ -15,6 +15,7 @@ import {
   Grid,
 } from '@material-ui/core'
 import './BlockResult.css'
+import FireworksSound from '../../../resources/sound/fire.mp3'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,7 +55,7 @@ const BlockResult = (props) => {
 
   const classes = useStyles()
 
-  const SCORE = props.time // временнная переменная тестирования
+  const SCORE = props.score
   let congrats
   if (SCORE > gameParams.mediumGameScore) {
     congrats = gameParams.successMessage
@@ -79,6 +80,10 @@ const BlockResult = (props) => {
     <div className="blockResult" >
       <div className="greatingsBlock">
         <img alt="Fireworks" src={Fireworks} />
+        <audio
+              src={FireworksSound}
+              autoplay="autoplay"
+            />
       </div>
       <Grid className="results" container justify="center">
       <h3>{congrats}</h3>
