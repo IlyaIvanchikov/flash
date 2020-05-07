@@ -54,11 +54,13 @@ const BlockResult = (props) => {
   }
 
   const classes = useStyles()
+  let sound = ""
 
   const SCORE = props.score
   let congrats
   if (SCORE > gameParams.mediumGameScore) {
     congrats = gameParams.successMessage
+    sound = FireworksSound
   } else if (SCORE <= gameParams.mediumGameScore && SCORE >= gameParams.minGameScore) {
     congrats = gameParams.goodMessage
   } else {
@@ -81,7 +83,7 @@ const BlockResult = (props) => {
       <div className="greatingsBlock">
         <img alt="Fireworks" src={Fireworks} />
         <audio
-              src={FireworksSound}
+              src={sound}
               autoplay="autoplay"
             />
       </div>
