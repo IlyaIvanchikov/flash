@@ -18,7 +18,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="page-footer">
+    <footer className="page-footer blockShadow">
       <div className="social-links">
         {socialLinks.map((link) => {
           return (

@@ -1,28 +1,21 @@
 .header {
   flex-grow: 1;
   background-color: #8fbe00;
-  padding: 10px 1%;
-  position: relative;
-  -webkit-box-shadow:
-  0px 0px 0px 6px rgba(182, 231, 170, 0.589),
-  2px 2px 2px 5px #555;
-  
-  -moz-box-shadow:
-  0px 0px 0px 6px rgba(182, 231, 170, 0.589),
-  2px 2px 2px 5px #555;
-  
-  box-shadow:
-  0px 0px 0px 2px rgba(182, 231, 170, 0.589),
-  2px 2px 2px 5px #555;
-}
+  padding: 10px 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+} 
 
 .logo {
-  width: 160px;
-  height: 80px;
+  max-width: 160px;
+  width: 100%;
+  /* height: 80px; */
   border: 2px solid orange;
   border-radius: 50px;
   background-color: white;
-  padding: 5px;
+  padding: 6px;
   margin-right: 5%;
 }
 
@@ -32,8 +25,22 @@
 
 .h1-header {
   font-size: 1.5rem;
+  /* color: #fff; */
+  font-style: italic;
+  /* background-color: #fff; */
 }
 
 .p-header {
   font-size: 1.2rem;
+}
+
+@media (max-width: 700px) {
+  
+  .logo {
+    max-width: 120px;
+  }
+  .title-hidden {
+    display: none;
+  }
+
 }

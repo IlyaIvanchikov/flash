@@ -6,10 +6,9 @@ import './BlockAnswer.css'
 
 const useStyles = makeStyles((theme) => ({
   button: {
-    // margin: theme.spacing(1),
-    position: 'absolute',
-    maxWidth: '40px',
-    transform: 'translate(-118px, 11px)',
+    position: "absolute",
+    maxWidth: "40px",
+    transform: "translate(-118px, 11px)"
   },
   textField: {
     width: '30ch',
