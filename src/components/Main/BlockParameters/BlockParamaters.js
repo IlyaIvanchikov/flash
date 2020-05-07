@@ -37,10 +37,10 @@ const useStyles = makeStyles((theme) => ({
 
 const BlockParameters = (props) => {
   const classes = useStyles()
-
+  const mainName = props.name
   const [time, setTime] = React.useState(1)
   const [countNumber, setCountNumber] = React.useState(1)
-  const [name, setName] = React.useState('пользователь')
+  const [name, setName] = React.useState(mainName)
 
   const handleTextField = (event) => {
     setName(event.target.value)
@@ -77,7 +77,7 @@ const BlockParameters = (props) => {
         <TextField
           id="outlined-helperText"
           label="Введите ваше имя"
-          defaultValue={name}
+          defaultValue= {name}
           // helperText="Введите ваше имя"
           variant="outlined"
           onChange={handleTextField}

@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const App = () => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('Друг');
   const classes = useStyles()
 
   const checkName = name => {
