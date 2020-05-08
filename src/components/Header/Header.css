@@ -1,14 +1,13 @@
 .header {
-  flex-grow: 1;
   flex-wrap: wrap;
   background-color: #8fbe00;
   padding: 10px 3%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-} 
-
-.logo {
+  }
+  
+  .logo {
   max-width: 160px;
   width: 100%;
   /* height: 80px; */
@@ -17,26 +16,27 @@
   background-color: white;
   padding: 6px;
   margin-right: 5%;
-}
-
-.link-logo {
+  }
+  
+  .link-logo {
   margin-right: 5%;
-}
-
-.h1-header {
+  }
+  
+  .h1-header {
   /* color: #fff; */
   font-style: italic;
   /* background-color: #fff; */
-}
-
-.p-header {
+  }
+  
+  .p-header {
   font-size: 1.7vw;
-}
+  }
 
 @media (max-width: 700px) {
   .p-header {
-    font-size: 3vw;
-  }
+   font-size: 4.5vw;
+ }
+  
   .logo {
     max-width: 120px;
   }

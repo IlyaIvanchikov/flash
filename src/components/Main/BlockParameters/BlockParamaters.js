@@ -23,15 +23,15 @@ const useStyles = makeStyles((theme) => ({
     width: 140
   },
   formControl: {
-    margin: theme.spacing(3)
+    margin: theme.spacing(3),
   },
   selectEmpty: {
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
   },
   buttonCheckParams: {
     marginLeft: theme.spacing(3),
-    marginRight: theme.spacing(3)
-  }
+    marginRight: theme.spacing(3),
+  },
 }))
 
 const BlockParameters = (props) => {
@@ -76,7 +76,7 @@ const BlockParameters = (props) => {
         <TextField
           id="outlined-helperText"
           label="Введите ваше имя"
-          defaultValue= {name}
+          defaultValue={name}
           // helperText="Введите ваше имя"
           variant="outlined"
           onChange={handleTextField}
@@ -134,7 +134,12 @@ const BlockParameters = (props) => {
             <MenuItem value={5}>Пять</MenuItem>
           </Select>
         </FormControl>
-        <Button variant="contained" color="primary" onClick={checkData} className={classes.buttonCheckParams}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={checkData}
+          className={classes.buttonCheckParams}
+        >
           НАЧАТЬ ИГРУ
         </Button>
       </FormGroup>
