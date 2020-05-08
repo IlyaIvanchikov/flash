@@ -1,7 +1,7 @@
 .blockParameters {
   flex-grow: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 0;
@@ -10,12 +10,13 @@
 .formGroup {
   background-color: grey;
   position: relative;
+  top: 4vh;
+  width: 50vw;
   opacity: 0.8;
   border-radius: 50px;
   text-align: center;
   padding: 3%;
-  margin: 5%;
-  font-size: 2rem;
+  margin-top: 1%;
   -webkit-box-shadow:
   0px 0px 0px 6px rgba(182, 231, 170, 0.589),
   2px 2px 2px 5px #555;
@@ -27,5 +28,16 @@
   box-shadow:
   0px 0px 0px 2px rgba(182, 231, 170, 0.589),
   2px 2px 2px 5px #555;
+}
+
+.h3 {
+  font-size: 2vw;
+  margin-top: 0;
+}
+
+.h5-params {
+  font-size: 1.5vw;
+  margin-bottom: 0;
+  margin-top: 1%;
 }
 

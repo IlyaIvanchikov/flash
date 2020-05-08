@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import {
   TextField,
   FormGroup,
-  Typography,
   InputLabel,
   MenuItem,
   FormControl,
@@ -18,10 +17,10 @@ import './BlockParameters.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 250,
+    width: 250
   },
   button: {
-    width: 140,
+    width: 140
   },
   formControl: {
     margin: theme.spacing(3)
@@ -73,7 +72,7 @@ const BlockParameters = (props) => {
   return (
     <div className="blockParameters">
       <FormGroup className="formGroup">
-        <h3>Введите параметры для начала игры</h3>
+        <h3 className="h3">Введите параметры для начала игры</h3>
         <TextField
           id="outlined-helperText"
           label="Введите ваше имя"
@@ -82,9 +81,9 @@ const BlockParameters = (props) => {
           variant="outlined"
           onChange={handleTextField}
         />
-        <Typography id="input-slider" variant="h5" gutterBottom>
+        <p id="input-slider" className="h5-params">
           Время показа карточки в сек.
-        </Typography>
+        </p>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
             <TimerIcon />
@@ -116,9 +115,9 @@ const BlockParameters = (props) => {
             />
           </Grid>
         </Grid>
-        <Typography id="input-select" variant="h5" gutterBottom>
+        <p id="input-select" className="h5-params">
           Количество цифр
-        </Typography>
+        </p>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="select-outlined-label">Цифры</InputLabel>
           <Select
