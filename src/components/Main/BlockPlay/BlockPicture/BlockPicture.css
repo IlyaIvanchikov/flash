@@ -1,15 +1,22 @@
 .blockPicture {
-    display: flex;
+    /* display: flex;
     line-height: 0;
+    outline: 0; */
+    width: 100%;
+    max-width: 80px;
 }
 
-.oneStick {
+/* .oneStick {
     display: flex;
     flex-direction: column;
 }
 
 .oneStick img {
     width: 100%;
-    max-width: 100px;
-    
+    max-width: 80px;
 }
+
+.fullCard img {
+    width: 100%;
+    max-width: 80px;
+} */

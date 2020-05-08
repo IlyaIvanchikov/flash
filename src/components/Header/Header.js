@@ -4,20 +4,24 @@ import Hidden from '@material-ui/core/Hidden';
 import Logo from '../../resources/img/tl.png';
 import './Header.css'
 
+const DEFAULT_NAME = "друг"
+const SITE_TITLE = "Тренажер: Флеш-карты"
+const SALUTATION = "Рады тебя видеть, "
+
 const Header = (props) => {
   return (
-    <header className="header">
-    <Grid container alignItems="center">
-      <Grid container item  xs={8} sm={6} direction="row" alignItems="center">
-        <a className="link-logo" href="/"><img src={Logo} alt="logo" className="logo"/></a>
-        <Hidden smDown>
-        <h1 className="h1-header">Флеш-карточки</h1>
-        </Hidden>
+    <header className="header blockShadow">
+      <Grid container alignItems="center">
+        <Grid container item  xs={6} sm={6} direction="row" alignItems="center">
+          <a className="link-logo" href="/"><img src={Logo} alt="logo" className="logo"/></a>
+          <Hidden smDown>
+          <h1 className="h1-header">{SITE_TITLE}</h1>
+          </Hidden>
+        </Grid>
+        <Grid container justify="flex-end" item xs={6} sm={6}>
+          <p className="p-header">{SALUTATION + (props.name || DEFAULT_NAME)}!</p>
+        </Grid>
       </Grid>
-      <Grid container justify="flex-end" item xs={4} sm={6}>
-        <p className="p-header">Добро пожаловать {props.name}!</p>
-      </Grid>
-    </Grid>
     </header>
   )
 }

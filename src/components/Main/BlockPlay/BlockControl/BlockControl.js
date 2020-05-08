@@ -17,7 +17,7 @@ const BlockControl = (props) => {
   }
 
   return (
-    <div className="blockControl">
+    <div className="blockControl blockShadow">
       <Grid container>
         <Grid item xs={6}>
           <Button

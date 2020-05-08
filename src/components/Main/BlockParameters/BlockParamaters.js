@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import {
   TextField,
   FormGroup,
-  Typography,
   InputLabel,
   MenuItem,
   FormControl,
@@ -24,23 +23,23 @@ const useStyles = makeStyles((theme) => ({
     width: 140,
   },
   formControl: {
-    margin: theme.spacing(3)
+    margin: theme.spacing(3),
   },
   selectEmpty: {
-    marginTop: theme.spacing(2)
+    marginTop: theme.spacing(2),
   },
   buttonCheckParams: {
     marginLeft: theme.spacing(3),
-    marginRight: theme.spacing(3)
-  }
+    marginRight: theme.spacing(3),
+  },
 }))
 
 const BlockParameters = (props) => {
   const classes = useStyles()
-
+  const mainName = props.name
   const [time, setTime] = React.useState(1)
   const [countNumber, setCountNumber] = React.useState(1)
-  const [name, setName] = React.useState('Пользователь')
+  const [name, setName] = React.useState(mainName)
 
   const handleTextField = (event) => {
     setName(event.target.value)
@@ -72,19 +71,19 @@ const BlockParameters = (props) => {
 
   return (
     <div className="blockParameters">
-      <FormGroup className="formGroup">
-        <h3>Введите параметры для начала игры</h3>
+      <FormGroup className="formGroup blockShadow">
+        <h3 className="h3">Введите параметры для начала игры</h3>
         <TextField
           id="outlined-helperText"
-          label="Вводите текст"
+          label="Введите ваше имя"
           defaultValue={name}
-          helperText="Введите ваше имя"
+          // helperText="Введите ваше имя"
           variant="outlined"
           onChange={handleTextField}
         />
-        <Typography id="input-slider" variant="h5" gutterBottom>
-          Укажите скорость воспроизведения картинок
-        </Typography>
+        <p id="input-slider" className="h5-params">
+          Время показа карточки в сек.
+        </p>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
             <TimerIcon />
@@ -116,9 +115,9 @@ const BlockParameters = (props) => {
             />
           </Grid>
         </Grid>
-        <Typography id="input-select" variant="h5" gutterBottom>
-          Укажите желаемое количество цифр
-        </Typography>
+        <p id="input-select" className="h5-params">
+          Количество цифр
+        </p>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="select-outlined-label">Цифры</InputLabel>
           <Select
@@ -135,7 +134,12 @@ const BlockParameters = (props) => {
             <MenuItem value={5}>Пять</MenuItem>
           </Select>
         </FormControl>
-        <Button variant="contained" color="primary" onClick={checkData} className={classes.buttonCheckParams}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={checkData}
+          className={classes.buttonCheckParams}
+        >
           НАЧАТЬ ИГРУ
         </Button>
       </FormGroup>

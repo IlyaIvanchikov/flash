@@ -1,8 +1,9 @@
 .main {
-    flex-grow: 1;
+    flex: 1;
+    display: flex;
     box-sizing: border-box;
-    min-height:  calc(100vh - 120px);;
-    padding-bottom: 80px;
+    /* min-height:  calc(100vh - 120px);
+    padding-bottom: 80px; */
     background-color: #8fbe00;
     background-image: url('../../resources/img/back.jpg');
     background-position: center center;
@@ -14,5 +15,13 @@
 @media only screen and (max-width: 767px) {
   .main {
     background-image: url('../../resources/img/back-mobile.jpg');
+  }
+
+  .h3 {
+    font-size: 5vw;
+  }
+
+  .h5-params {
+    font-size: 4vw;
   }
 }
