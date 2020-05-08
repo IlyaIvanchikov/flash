@@ -2,7 +2,10 @@ import React, { useState, useRef } from 'react'
 import { TextField, Button, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import SendIcon from '@material-ui/icons/Send'
+import wrongAnswer from '../../../../resources/sound/wrong.mp3'
+import correctAnswer from '../../../../resources/sound/correct.mp3'
 import './BlockAnswer.css'
+
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -90,11 +93,11 @@ const BlockAnswer = (props) => {
             />
             {buttonAnswer}
             <audio
-              src="https://zvukipro.com/uploads/files/2018-10/1540308965_jg-032316-sfx-elearning-incorrect-answer-sound-3.mp3"
+              src={wrongAnswer}
               ref={wrongAudioPlayer}
             />
             <audio
-              src="https://zvukipro.com/uploads/files/2018-10/1540308869_jg-032316-sfx-elearning-correct-answer-sound-1.mp3"
+              src={correctAnswer}
               ref={correctAudioPlayer}
             />
           </form>
