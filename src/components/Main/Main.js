@@ -51,6 +51,7 @@ const Main = (props) => {
         name={props.name}
         stateHandler={paramsHandler}
         score={score}
+        countRoundPlay={countRoundPlay}
       />
     )
   }
