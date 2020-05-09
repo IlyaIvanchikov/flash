@@ -11,7 +11,7 @@ const Main = (props) => {
   const [checkParams, setCheckParams] = useState(true)
   const [score, setScore] = useState(0)
   const [countRound, setCountRound] = useState(0)
-  const countRoundPlay = 5
+  const countRoundPlay = 10
 
   const checkHandler = (time, countNumber, name) => {
     setCountNumber(countNumber)
