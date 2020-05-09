@@ -87,7 +87,7 @@ const BlockResult = (props) => {
               autoplay="autoplay"
             />
       </div>
-      <Grid className="results" container justify="center">
+      <Grid className="results blockShadow" container justify="center">
       <h3>{congrats}</h3>
         <Grid container alignItems="center"  justify="center" item xs={12}>
           <p>Ты набрал {declOfNum(SCORE, BALL_STRING)} из {gameParams.maxGameScore} возможных</p>

@@ -51,7 +51,7 @@ const BlockPlay = (props) => {
   return (
     <div className="blockPlay">
       <Control stateHandler={paramsHandler} score={score} />
-      <div className="blockCard">
+      <div className="blockCard blockShadow">
         {show && countPicture}
         {!show && thinkingPicture}
       </div>

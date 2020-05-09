@@ -71,7 +71,7 @@ const BlockParameters = (props) => {
 
   return (
     <div className="blockParameters">
-      <FormGroup className="formGroup">
+      <FormGroup className="formGroup blockShadow">
         <h3 className="h3">Введите параметры для начала игры</h3>
         <TextField
           id="outlined-helperText"

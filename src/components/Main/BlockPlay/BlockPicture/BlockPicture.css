@@ -1,10 +1,12 @@
 .blockPicture {
-    display: flex;
+    /* display: flex;
     line-height: 0;
-    outline: 0;
+    outline: 0; */
+    width: 100%;
+    max-width: 80px;
 }
 
-.oneStick {
+/* .oneStick {
     display: flex;
     flex-direction: column;
 }
@@ -17,4 +19,4 @@
 .fullCard img {
     width: 100%;
     max-width: 80px;
-}
+} */
