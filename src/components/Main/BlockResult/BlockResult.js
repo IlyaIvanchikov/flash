@@ -84,7 +84,7 @@ const BlockResult = (props) => {
         <img alt="Fireworks" src={Fireworks} />
         <audio
               src={sound}
-              autoplay="autoplay"
+              autoPlay="autoplay"
             />
       </div>
       <Grid className="results blockShadow" container justify="center">
