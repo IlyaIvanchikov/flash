@@ -82,7 +82,7 @@ const BlockParameters = (props) => {
           onChange={handleTextField}
         />
         <p id="input-slider" className="h5-params">
-          Время показа карточки в сек.
+          Скорость
         </p>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
@@ -116,7 +116,7 @@ const BlockParameters = (props) => {
           </Grid>
         </Grid>
         <p id="input-select" className="h5-params">
-          Количество цифр
+          Количество знаков
         </p>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="select-outlined-label">Цифры</InputLabel>
@@ -132,6 +132,7 @@ const BlockParameters = (props) => {
             <MenuItem value={3}>Три</MenuItem>
             <MenuItem value={4}>Четыре</MenuItem>
             <MenuItem value={5}>Пять</MenuItem>
+            <MenuItem value={6}>Шесть</MenuItem>
           </Select>
         </FormControl>
         <Button
