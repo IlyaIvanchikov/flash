@@ -4,9 +4,9 @@ import Hidden from '@material-ui/core/Hidden';
 import Logo from '../../resources/img/tl.png';
 import './Header.css'
 
-const DEFAULT_NAME = "друг"
+const DEFAULT_NAME = "дорогой друг"
 const SITE_TITLE = "Тренажер: Флеш-карты"
-const SALUTATION = "Рады тебя видеть, "
+const SALUTATION = "Привет, "
 
 const Header = (props) => {
   return (

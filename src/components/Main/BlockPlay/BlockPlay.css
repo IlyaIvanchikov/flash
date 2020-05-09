@@ -16,8 +16,15 @@
 }
 
 .questionImg {
-  /* margin: 5%;
-  width: 100%; */
-  max-height: 300px;
-  width: auto;
+  width: 100%;
+  max-width: 400px;
+  /* padding: 3%; */
+  /* max-height: 300px; */
+  /* width: auto; */
+}
+
+@media (max-width: 500px) {
+  .questionImg {
+    max-width: 300px;
+  }
 }

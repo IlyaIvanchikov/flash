@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Control from './BlockControl/BlockControl'
 import Answer from './BlockAnswer/BlockAnswer'
 import Picture from './BlockPicture/BlockPicture'
-import quastionMark from '../../../resources/img/quastion.jpg'
+import questionMark from '../../../resources/img/question.jpg'
 
 import './BlockPlay.css'
 //const Picture = React.lazy(() => import('./BlockPicture/BlockPicture'));
@@ -47,7 +47,7 @@ const BlockPlay = (props) => {
     <Picture key={i} random={trueArr[i]}/>
   ))
 
-  const thinkingPicture = <img className="questionImg" alt="quastion" src={quastionMark} />
+  const thinkingPicture = <img className="questionImg" alt="question" src={questionMark} />
   return (
     <div className="blockPlay">
       <Control stateHandler={paramsHandler} score={score} />
