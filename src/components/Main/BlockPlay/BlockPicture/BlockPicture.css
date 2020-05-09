@@ -2,10 +2,14 @@
     /* display: flex;
     line-height: 0;
     outline: 0; */
+    display: flex;
+    line-height: 0;
+    outline: 0;
+}
+.blockPicture img {
     width: 100%;
     max-width: 80px;
 }
-
 /* .oneStick {
     display: flex;
     flex-direction: column;
