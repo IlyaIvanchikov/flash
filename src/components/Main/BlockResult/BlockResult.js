@@ -37,7 +37,7 @@ function declOfNum(n, titles) {
       goodMessage: "Хороший результат, но тебе нужно еще потренироваться",
       successMessage: "Поздравляем, ты набрал максимальный балл!",
       minGameScore: props.countRoundPlay / 2,
-      mediumGameScore: props.countRoundPlay/2 +  2, 
+      mediumGameScore: props.countRoundPlay - 3, 
       maxGameScore: props.countRoundPlay
     }
 
@@ -50,10 +50,10 @@ function declOfNum(n, titles) {
 
   const SCORE = props.score
   let congrats
-  if (SCORE > gameParams.mediumGameScore) {
+  if (SCORE === gameParams.maxGameScore) {
     congrats = gameParams.successMessage
     sound = FireworksSound
-  } else if (SCORE <= gameParams.mediumGameScore && SCORE >= gameParams.minGameScore) {
+  } else if (SCORE >= gameParams.mediumGameScore && SCORE < gameParams.maxGameScore) {
     congrats = gameParams.goodMessage
   } else {
     congrats = gameParams.failMessage
