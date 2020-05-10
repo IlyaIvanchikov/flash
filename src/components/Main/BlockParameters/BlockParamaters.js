@@ -126,8 +126,8 @@ const BlockParameters = (props) => {
             onChange={handleChange}
             label="countNumber"
           >
-            <MenuItem value={1}>Одна</MenuItem>
-            <MenuItem value={2}>Две</MenuItem>
+            <MenuItem value={1}>Один</MenuItem>
+            <MenuItem value={2}>Два</MenuItem>
             <MenuItem value={3}>Три</MenuItem>
             <MenuItem value={4}>Четыре</MenuItem>
             <MenuItem value={5}>Пять</MenuItem>
