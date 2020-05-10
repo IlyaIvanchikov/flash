@@ -28,17 +28,44 @@
   .p-header {
   font-size: 1.2rem;
   }
-  .h1-header {
-    font-size: 1.5rem;
+
+  .p-header a {
+    color: #fff;
+    padding: 10px;
+    margin-right: 20px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: calc( 45px / 2);
+    }
+
+    .p-header a:hover {
+      color: rgb(39, 42, 204);
+      background-color: #fff;
+      }
+
+  .header-title {
+    font-size: 22px;
   }
 
-@media (max-width: 500px) {
+@media (max-width: 1130px) {
+  .header-title, .p-header {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 850px) {
+  .header-title {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
   
   .logo {
     max-width: 120px;
   }
-  .title-hidden {
+
+  .header-salutation {
     display: none;
   }
-
 }
