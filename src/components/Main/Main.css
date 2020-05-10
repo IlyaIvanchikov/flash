@@ -4,7 +4,7 @@
     box-sizing: border-box;
     /* min-height:  calc(100vh - 120px);
     padding-bottom: 80px; */
-    background-color: #8fbe00;
+    background-color: rgb(53, 53, 156);
     background-image: url('../../resources/img/back.jpg');
     background-position: center center;
     background-repeat: no-repeat;

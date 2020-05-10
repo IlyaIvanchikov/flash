@@ -2,11 +2,11 @@ import React from 'react'
 import { Button, Grid } from '@material-ui/core'
 import KeyboardBackspaceSharpIcon from '@material-ui/icons/KeyboardBackspaceSharp'
 import questionMark from '../../../../resources/img/question.jpg'
-// import Picture from '../BlockPicture/BlockPicture'
+import Picture from '../BlockPicture/BlockPicture'
 import './BlockControl.css'
-import CircularProgress from '@material-ui/core/CircularProgress';
+// import CircularProgress from '@material-ui/core/CircularProgress';
 
-const Picture = React.lazy(() => import('../BlockPicture/BlockPicture'));
+// const Picture = React.lazy(() => import('../BlockPicture/BlockPicture'));
 
 const BlockControl = (props) => {
   const show = props.show
@@ -46,7 +46,6 @@ const BlockControl = (props) => {
             Начать заново
           </Button>
         </Grid>
-        <React.Suspense fallback={<CircularProgress />}>
         <Grid
           item
           md={12}
@@ -60,7 +59,6 @@ const BlockControl = (props) => {
           {show && countPicture}
           {!show && thinkingPicture}
         </Grid>
-        </React.Suspense>
         <Grid
           container
           item
