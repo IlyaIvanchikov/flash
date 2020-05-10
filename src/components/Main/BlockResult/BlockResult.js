@@ -2,15 +2,6 @@ import React, { useEffect } from 'react'
 import Fireworks from '../../../resources/img/Fireworks.gif'
 import { makeStyles } from '@material-ui/core/styles'
 import {
-  // TextField,
-  // FormGroup,
-  // Typography,
-  // InputLabel,
-  // MenuItem,
-  // FormControl,
-  // Select,
-  // Slider,
-  // Input,
   Button,
   Grid,
 } from '@material-ui/core'
@@ -30,24 +21,25 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const gameParams = {
-  failMessage: "В этот раз не получилось",
-  goodMessage: "Хороший результат, но тебе нужно еще потренироваться",
-  successMessage: "Поздравляем, ты набрал максимальный балл!",
-  minGameScore: 3,
-  mediumGameScore: 4, 
-  maxGameScore: 5
-}
 
 // Функция склоняет слова от количества (3 варианта)
 function declOfNum(n, titles) {
   return n + ' ' + titles[n % 10 === 1 && n % 100 !== 11 ?
-                          0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2];
+    0 : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 1 : 2];
   }
-
-const BALL_STRING = ['балл', 'балла', 'баллов'];
-
-const BlockResult = (props) => {
+  
+  const BALL_STRING = ['балл', 'балла', 'баллов'];
+  
+  const BlockResult = (props) => {
+    
+    const gameParams = {
+      failMessage: "В этот раз не получилось",
+      goodMessage: "Хороший результат, но тебе нужно еще потренироваться",
+      successMessage: "Поздравляем, ты набрал максимальный балл!",
+      minGameScore: props.countRoundPlay / 2,
+      mediumGameScore: props.countRoundPlay - 3, 
+      maxGameScore: props.countRoundPlay
+    }
 
   const startGame = () => {
     props.stateHandler()
@@ -58,10 +50,10 @@ const BlockResult = (props) => {
 
   const SCORE = props.score
   let congrats
-  if (SCORE > gameParams.mediumGameScore) {
+  if (SCORE === gameParams.maxGameScore) {
     congrats = gameParams.successMessage
     sound = FireworksSound
-  } else if (SCORE <= gameParams.mediumGameScore && SCORE >= gameParams.minGameScore) {
+  } else if (SCORE >= gameParams.mediumGameScore && SCORE < gameParams.maxGameScore) {
     congrats = gameParams.goodMessage
   } else {
     congrats = gameParams.failMessage
@@ -84,13 +76,13 @@ const BlockResult = (props) => {
         <img alt="Fireworks" src={Fireworks} />
         <audio
               src={sound}
-              autoplay="autoplay"
+              autoPlay="autoplay"
             />
       </div>
       <Grid className="results blockShadow" container justify="center">
-      <h3>{congrats}</h3>
+      <h3 className="h3">{congrats}</h3>
         <Grid container alignItems="center"  justify="center" item xs={12}>
-          <p>Ты набрал {declOfNum(SCORE, BALL_STRING)} из {gameParams.maxGameScore} возможных</p>
+          <p  className="h5-params result-text">Ты набрал {declOfNum(SCORE, BALL_STRING)} из {gameParams.maxGameScore} возможных</p>
         </Grid>
         <Grid container justify="center"  item xs={12}>
           <Button className={classes.buttonCheckParams} variant="contained" color="primary" onClick={startGame}>

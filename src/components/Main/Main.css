@@ -2,9 +2,7 @@
     flex: 1;
     display: flex;
     box-sizing: border-box;
-    /* min-height:  calc(100vh - 120px);
-    padding-bottom: 80px; */
-    background-color: #8fbe00;
+    background-color: rgb(53, 53, 156);
     background-image: url('../../resources/img/back.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -12,16 +10,32 @@
     background-size: cover;
   }
   
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
+
+  .h3 {
+    font-size: 22px;
+    padding: 8px;
+  }
+
+  .formGroup {
+    margin: 8%;
+    top: 4%;
+    width: 80vw;
+    
+  }
+  .h5-params {
+    font-size: 16px;
+  }
   .main {
     background-image: url('../../resources/img/back-mobile.jpg');
   }
+}
 
-  .h3 {
-    font-size: 5vw;
+@media only screen and (max-width: 550px) {
+  .formGroup {
+    padding: 20px;
   }
-
-  .h5-params {
-    font-size: 4vw;
+  .h3 {
+    font-size: 14px;
   }
 }

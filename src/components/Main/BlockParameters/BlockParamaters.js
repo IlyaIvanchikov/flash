@@ -17,10 +17,10 @@ import './BlockParameters.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 250,
+    width: 250
   },
   button: {
-    width: 140,
+    width: 140
   },
   formControl: {
     margin: theme.spacing(3),
@@ -77,12 +77,11 @@ const BlockParameters = (props) => {
           id="outlined-helperText"
           label="Введите ваше имя"
           defaultValue={name}
-          // helperText="Введите ваше имя"
           variant="outlined"
           onChange={handleTextField}
         />
-        <p id="input-slider" className="h5-params">
-          Время показа карточки в сек.
+        <p id="input-slider" className="h5-params speed">
+          Скорость
         </p>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
@@ -116,7 +115,7 @@ const BlockParameters = (props) => {
           </Grid>
         </Grid>
         <p id="input-select" className="h5-params">
-          Количество цифр
+          Количество знаков
         </p>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel id="select-outlined-label">Цифры</InputLabel>
@@ -127,11 +126,12 @@ const BlockParameters = (props) => {
             onChange={handleChange}
             label="countNumber"
           >
-            <MenuItem value={1}>Одна</MenuItem>
-            <MenuItem value={2}>Две</MenuItem>
+            <MenuItem value={1}>Один</MenuItem>
+            <MenuItem value={2}>Два</MenuItem>
             <MenuItem value={3}>Три</MenuItem>
             <MenuItem value={4}>Четыре</MenuItem>
             <MenuItem value={5}>Пять</MenuItem>
+            <MenuItem value={6}>Шесть</MenuItem>
           </Select>
         </FormControl>
         <Button

@@ -1,6 +1,6 @@
 footer {
     height: 40px;
-    background-color: #8fbe00;
+    background-color: rgb(53, 53, 156);
     display: flex;
     justify-content: space-between;
     align-items: center;

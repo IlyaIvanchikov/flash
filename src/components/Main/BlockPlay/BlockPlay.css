@@ -2,22 +2,5 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-}
-
-.blockCard {
-  display: flex;
-  box-sizing: border-box;
-  padding: 5%;
-  flex-direction: row;
-  /* max-width: 95%; */
-  margin: 0 auto;
-  border-radius: 7vh;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.questionImg {
-  /* margin: 5%;
-  width: 100%; */
-  max-height: 300px;
-  width: auto;
+  justify-content: center;
 }

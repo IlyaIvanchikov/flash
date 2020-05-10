@@ -1,7 +1,7 @@
 .blockParameters {
   flex-grow: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 0;
@@ -17,6 +17,10 @@
   padding: 3%;
   margin: 3%;
   font-size: 2rem;
+}
+
+.speed {
+  line-height: 25px;
 }
 
 .h5-params {
