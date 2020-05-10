@@ -33,3 +33,7 @@
   overflow: hidden;
   display: none;
 }
+
+.result-text {
+  padding-bottom: 20px;
+}

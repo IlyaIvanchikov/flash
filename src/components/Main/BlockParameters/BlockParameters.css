@@ -19,6 +19,10 @@
   font-size: 2rem;
 }
 
+.speed {
+  line-height: 25px;
+}
+
 .h5-params {
   font-size: 1.5vw;
   margin-bottom: 0;

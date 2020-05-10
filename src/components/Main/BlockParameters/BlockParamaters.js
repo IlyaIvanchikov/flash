@@ -77,11 +77,10 @@ const BlockParameters = (props) => {
           id="outlined-helperText"
           label="Введите ваше имя"
           defaultValue={name}
-          // helperText="Введите ваше имя"
           variant="outlined"
           onChange={handleTextField}
         />
-        <p id="input-slider" className="h5-params">
+        <p id="input-slider" className="h5-params speed">
           Скорость
         </p>
         <Grid container spacing={2} alignItems="center">

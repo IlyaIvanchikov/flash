@@ -80,9 +80,9 @@ function declOfNum(n, titles) {
             />
       </div>
       <Grid className="results blockShadow" container justify="center">
-      <h3>{congrats}</h3>
+      <h3 className="h3">{congrats}</h3>
         <Grid container alignItems="center"  justify="center" item xs={12}>
-          <p>Ты набрал {declOfNum(SCORE, BALL_STRING)} из {gameParams.maxGameScore} возможных</p>
+          <p  className="h5-params result-text">Ты набрал {declOfNum(SCORE, BALL_STRING)} из {gameParams.maxGameScore} возможных</p>
         </Grid>
         <Grid container justify="center"  item xs={12}>
           <Button className={classes.buttonCheckParams} variant="contained" color="primary" onClick={startGame}>
