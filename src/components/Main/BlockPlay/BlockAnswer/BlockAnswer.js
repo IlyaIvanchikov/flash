@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { TextField, Button, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import SendIcon from '@material-ui/icons/Send'
 import wrongAnswer from '../../../../resources/sound/wrong.mp3'
 import correctAnswer from '../../../../resources/sound/correct.mp3'
 import './BlockAnswer.css'
@@ -11,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     position: "absolute",
     maxWidth: "40px",
-    transform: "translate(-118px, 11px)"
+    transform: "translate(-105px, 10px)"
   },
   textField: {
     width: '30ch',
@@ -58,9 +57,8 @@ const BlockAnswer = (props) => {
         color="primary"
         prevent="true"
         className={classes.button}
-        startIcon={<SendIcon />}
         disabled
-      ></Button>
+      >ОТВЕТ</Button>
     )
   } else {
     buttonAnswer = (
@@ -72,8 +70,7 @@ const BlockAnswer = (props) => {
         color="primary"
         prevent="true"
         className={classes.button}
-        startIcon={<SendIcon />}
-      ></Button>
+      >ОТВЕТ</Button>
     )
   }
 
