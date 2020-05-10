@@ -7,3 +7,10 @@
     width: 100%;
     max-width: 80px;
 }
+
+@media (max-width: 500px) {
+  
+    .blockPicture img {
+        max-width: 40px;
+    }
+  }

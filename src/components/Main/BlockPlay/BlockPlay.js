@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Control from './BlockControl/BlockControl'
 import Answer from './BlockAnswer/BlockAnswer'
-import Picture from './BlockPicture/BlockPicture'
-import questionMark from '../../../resources/img/question.jpg'
+// import Picture from './BlockPicture/BlockPicture'
+
 
 import './BlockPlay.css'
 //const Picture = React.lazy(() => import('./BlockPicture/BlockPicture'));
@@ -43,18 +43,14 @@ const BlockPlay = (props) => {
     }, time);
   }, [countRound, time])
 
-  const countPicture = [...Array(countNumber)].map((e, i) => (
-    <Picture key={i} random={trueArr[i]}/>
-  ))
 
-  const thinkingPicture = <img className="questionImg" alt="question" src={questionMark} />
+
   return (
     <div className="blockPlay">
-      <Control stateHandler={paramsHandler} score={score} />
-      <div className="blockCard blockShadow">
-        {show && countPicture}
-        {!show && thinkingPicture}
-      </div>
+      <Control stateHandler={paramsHandler} score={score} show={show} countNumber={countNumber} trueArr={trueArr}/>
+      {/* <div className="blockCard blockShadow">
+
+      </div> */}
       <Answer rounds={props.countRound} answerHandler={checkAnswer} show={show} score={score} trueArr={trueArr}/>
     </div>
   )

@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     width: '30ch',
     paddingRight: '20px',
+    left: '10px'
   },
 }))
 
