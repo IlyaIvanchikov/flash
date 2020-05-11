@@ -1,6 +1,6 @@
 .header {
   flex-wrap: wrap;
-  background-color: rgb(53, 53, 156);
+  background-color: #8fbe00;
   padding: 10px 3%;
   display: flex;
   flex-direction: row;
@@ -39,7 +39,7 @@
     }
 
     .p-header a:hover {
-      color: rgb(39, 42, 204);
+      color: #8fbe00;
       background-color: #fff;
       }
 

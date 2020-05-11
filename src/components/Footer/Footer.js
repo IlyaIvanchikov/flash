@@ -13,7 +13,7 @@ const imgSocial = paths.map((path) => reqSvgs(path))
 const socialLinks = [
   ['instagram', 'https://www.instagram.com/pifagoriya_tomsk/'],
   ['vkontakte', 'https://vk.com/pifagoriya'],
-  ['youtube', 'https://www.youtube.com/channel/UCg8ss4xW9jASrqWGP30jXiw'],
+  ['youtube', 'https://www.youtube.com/channel/UCbK2Y-37z11NpkRHIDasHwA/'],
 ]
 
 const Footer = () => {

@@ -118,7 +118,7 @@ const BlockParameters = (props) => {
           Количество знаков
         </p>
         <FormControl variant="outlined" className={classes.formControl}>
-          <InputLabel id="select-outlined-label">Цифры</InputLabel>
+          <InputLabel id="select-outlined-label">Знаки</InputLabel>
           <Select
             labelId="select-outlined-label"
             id="simple-select-outlined"

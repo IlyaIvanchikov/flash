@@ -11,7 +11,8 @@
   background-color: grey;
   position: relative;
   opacity: 0.9;
-  width: 70vw;
+  max-width: 100%;
+  /* width: 70vw; */
   border-radius: 50px;
   text-align: center;
   padding: 3%;
