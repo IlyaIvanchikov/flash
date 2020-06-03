@@ -1,0 +1,35 @@
+.blockControl {
+  margin: 3%;
+  padding: 10px 3%;
+  border-radius: 50px;
+}
+
+.p-blockControl {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+} 
+
+.blockCard {
+  padding: 5%;
+  /* flex-direction: row; */
+  /* max-width: 95%; */
+  /* margin: 0 auto; */
+  border-radius: 7vh; 
+  background-color: rgba(0, 0, 0, 0.3); 
+}
+
+.questionImg {
+  width: 100%;
+  max-width: 400px;
+  padding: 4%;
+  /* max-height: 300px; */
+  /* width: auto; */
+}
+
+@media (max-width: 500px) {
+  .questionImg {
+    max-width: 300px;
+  }
+}
+

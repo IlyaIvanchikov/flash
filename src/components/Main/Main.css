@@ -1,0 +1,41 @@
+.main {
+    flex: 1;
+    display: flex;
+    box-sizing: border-box;
+    background-color: #8fbe00;
+    background-image: url('../../resources/img/back.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+@media only screen and (max-width: 768px) {
+
+  .h3 {
+    font-size: 22px;
+    padding: 8px;
+  }
+
+  .formGroup {
+    margin: 8%;
+    top: 4%;
+    width: 80vw;
+    
+  }
+  .h5-params {
+    font-size: 16px;
+  }
+  .main {
+    background-image: url('../../resources/img/back-mobile.jpg');
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .formGroup {
+    padding: 20px;
+  }
+  .h3 {
+    font-size: 14px;
+  }
+}

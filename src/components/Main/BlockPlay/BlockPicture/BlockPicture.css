@@ -1,0 +1,16 @@
+.blockPicture {
+    display: flex;
+    line-height: 0;
+    outline: 0;
+}
+.blockPicture img {
+    width: 100%;
+    max-width: 80px;
+}
+
+@media (max-width: 500px) {
+  
+    .blockPicture img {
+        max-width: 40px;
+    }
+  }

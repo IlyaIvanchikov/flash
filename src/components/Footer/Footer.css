@@ -1,0 +1,22 @@
+footer {
+    height: 40px;
+    background-color: #8fbe00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%;
+    flex-shrink: 0;
+}
+
+footer .copyrights {
+    font-size: small;
+    color: honeydew;
+}
+
+footer .social-link {
+    margin: 0 20px 0 0;
+}
+
+footer .social-links img {
+    width: 20px;
+}
