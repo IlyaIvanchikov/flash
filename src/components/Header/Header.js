@@ -8,6 +8,12 @@ const SITE_TITLE = "Тренажер: Флеш-карты"
 const SALUTATION = "Здравствуй, "
 
 const Header = (props) => {
+
+  const handleExit = () => {
+    localStorage.removeItem('token');
+    window.location.replace('')
+  };
+
   return (
     <header className="header blockShadow">
       <Grid container alignItems="center">
@@ -22,6 +28,9 @@ const Header = (props) => {
             <a href="https://pifagoriyatsk.ru/866-2/trenajor/" >
             &#9668; К тренажерам
             </a>
+            {props.name && <a href="#" onClick={handleExit} >
+            Выход
+            </a>}
             <span className="header-salutation" >
             {SALUTATION + (props.name || DEFAULT_NAME)}!
             </span>
