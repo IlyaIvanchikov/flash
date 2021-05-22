@@ -22,11 +22,9 @@ const App = () => {
   }
 
   const exitHandler = () => {
-    console.log('выхожу')
     localStorage.removeItem('token');
-    setToken('')
     localStorage.removeItem('name');
-    setName('')
+    window.location.reload()
   }
 
   return (
