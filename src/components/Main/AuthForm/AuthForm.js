@@ -57,6 +57,8 @@ const AuthForm = (props) => {
       })
       .catch((err) => {
         setLoading(false)
+        props.errorHandler()
+        console.log('err')
       });
 
   }

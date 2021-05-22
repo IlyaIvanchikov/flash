@@ -7,17 +7,18 @@ import axios from 'axios'
 import './Main.css'
 
 const URL = 'https://pifagoriyatsk.ru';
+const isLocked = true // закрыто авторизацией
 
 const Main = (props) => {
-  const [token, setToken] = useState(localStorage.getItem('token') || '');
-  const name = props.name
-  const [isLocked, setIsLocked] = useState(true)
+  const { token, setToken, name, handleName } = props
+  const [auth, setAuth] = useState(!isLocked)
   const [loading, setLoading] = useState(token ? true : false)
   const [time, setTime] = useState(0.1)
   const [countNumber, setCountNumber] = useState(1)
   const [checkParams, setCheckParams] = useState(true)
   const [score, setScore] = useState(0)
   const [countRound, setCountRound] = useState(0)
+  const [error, setError] = useState(false)
   const countRoundPlay = 10
 
   if (token) {
@@ -30,24 +31,34 @@ const Main = (props) => {
       .then((res) => {
         const { first_name } = res.data;
         localStorage.setItem('name', first_name);
-        props.handleName(first_name)
+        handleName(first_name)
         setLoading(false);
-        setIsLocked(false);
+        setAuth(true);
       })
       .catch(err => {
         localStorage.removeItem('token')
+        localStorage.removeItem('name');
         setLoading(false);
-        window.location.replace('/')
       })
   } else {
     // window.location.replace('https://pifagoriyatsk.ru/app-auth?app=build');
+    if (!checkParams) setCheckParams(true)
   }
 
   const checkHandler = (time, countNumber, name) => {
     setCountNumber(countNumber)
-    props.handleName(name)
+    handleName(name)
     setTime(time)
     setCheckParams(false)
+  }
+
+  const errHandler = () => {
+    setError(true)
+    setLoading(true)
+    setInterval(() => {
+      setError(false)
+      setLoading(false)
+    }, 2000)
   }
 
   const paramsHandler = () => {
@@ -62,11 +73,12 @@ const Main = (props) => {
   }
   let mainContent
   if (checkParams) {
-    if (isLocked) {
+    if (!auth) {
       if (loading) {
-        mainContent = <p className="loading">Загрузка...</p>
+        const textInfo = !error ? 'Загрузка...' : '[Ошибка. Неправильный логин или пароль]'
+        mainContent = <p className="loading">{textInfo}</p>
       } else {
-        mainContent = <AuthForm handler={setToken}/>
+        mainContent = <AuthForm errorHandler={errHandler} handler={setToken}/>
       }
     } else {
       mainContent = <BlockParameters dataParams={checkHandler} name={name}/>
@@ -86,7 +98,7 @@ const Main = (props) => {
     mainContent = (
       <BlockResult
         time={time}
-        name={props.name}
+        name={name}
         stateHandler={paramsHandler}
         score={score}
         countRoundPlay={countRoundPlay}
