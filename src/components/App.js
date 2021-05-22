@@ -14,16 +14,23 @@ const useStyles = makeStyles((theme) => ({
 
 const App = () => {
   const [name, setName] = useState('');
+  const [token, setToken] = useState(localStorage.getItem('token') || '');
   const classes = useStyles()
 
   const checkName = name => {
     setName(name);
   }
 
+  const exitHandler = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+    window.location.reload()
+  }
+
   return (
     <div className={classes.root}>
-      <Header name={name} />
-      <Main handleName={checkName} name={name}/>
+      <Header exitHandler={exitHandler} name={name} />
+      <Main setToken={setToken} token={token} handleName={checkName} name={name}/>
       <Footer />
     </div>
   )
