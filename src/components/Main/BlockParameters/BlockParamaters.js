@@ -1,7 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import {
-  TextField,
   FormGroup,
   InputLabel,
   MenuItem,
@@ -36,14 +35,8 @@ const useStyles = makeStyles((theme) => ({
 
 const BlockParameters = (props) => {
   const classes = useStyles()
-  const mainName = props.name
   const [time, setTime] = React.useState(1)
   const [countNumber, setCountNumber] = React.useState(1)
-  const [name, setName] = React.useState(mainName)
-
-  const handleTextField = (event) => {
-    setName(event.target.value)
-  }
 
   const handleSliderChange = (event, newValue) => {
     setTime(newValue)
@@ -66,20 +59,13 @@ const BlockParameters = (props) => {
   }
 
   const checkData = () => {
-    props.dataParams(time, countNumber, name)
+    props.dataParams(time, countNumber)
   }
 
   return (
     <div className="blockParameters">
       <FormGroup className="formGroup blockShadow">
         <h3 className="h3">Введите параметры для начала игры</h3>
-        <TextField
-          id="outlined-helperText"
-          label="Введите ваше имя"
-          defaultValue={name}
-          variant="outlined"
-          onChange={handleTextField}
-        />
         <p id="input-slider" className="h5-params speed">
           Скорость
         </p>
